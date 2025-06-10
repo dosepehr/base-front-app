@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import ToastContainer from '@/components/Toast/ToastContainer';
 import { Suspense } from 'react';
+import ReactQueryProvider from '@/utils/api/ReactQueryProvider';
 const lato = Lato({
     display: 'swap',
     subsets: ['latin'],
@@ -64,10 +65,12 @@ export default function RootLayout({
             className={`antialiased overflow-x-hidden ${estedad.variable} ${lato.variable}`}
         >
             <body>
-                <Suspense>
-                    <ToastContainer />
-                </Suspense>
-                {children}
+                <ReactQueryProvider>
+                    <Suspense>
+                        <ToastContainer />
+                    </Suspense>
+                    {children}
+                </ReactQueryProvider>
             </body>
         </html>
     );

@@ -1,8 +1,37 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@plugin "daisyui" {
+  themes: light --default;
+  exclude: rootscrollgutter;
+}
+
+@plugin "daisyui/theme" {
+  color-scheme: "light";
+  default: true;
+  --color-primary: #2c373d;
+  --color-secondary: #ce4648;
+  --color-neutral: #f5cf60;
+  --color-base-content: #666666;
+  --root-bg: #2c373d;
+  --color-primary-content: #ffffff;
+  --color-secondary-content: oklch(98% 0.01 200);
+  --color-accent: #b8b8b8;
+  --color-accent-content: #f8f6f7;
+  --color-neutral-content: oklch(98% 0.01 240);
+  --color-info: oklch(70% 0.2 220);
+  --color-info-content: oklch(98% 0.01 220);
+  --color-success: #00a96e;
+  --color-success-content: oklch(98% 0.01 140);
+  --color-warning: #ffbe00;
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: #ff5861;
+  --color-error-content: oklch(98% 0.01 30);
+}
+
 html {
   font-family: var(--font-estedad);
+  background-color: var(--root-bg);
   scroll-behavior: smooth;
 }
 

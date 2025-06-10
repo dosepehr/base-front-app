@@ -1,4 +1,4 @@
-import Arrow from '@/../public/icons/arrow.svg';
+import Arrow from '%/arrow.svg';
 import Badge from '@/components/Badge';
 import Button from '@/components/Button';
 export default function Home() {

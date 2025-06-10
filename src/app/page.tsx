@@ -1,4 +1,5 @@
 import Arrow from '@/../public/icons/arrow.svg';
+import Badge from '@/components/Badge';
 import Button from '@/components/Button';
 export default function Home() {
     return (
@@ -9,6 +10,7 @@ export default function Home() {
             <Button variant='soft' theme='primary' size='lg' isLoading>
                 Soft Primary Large
             </Button>
+            <Badge>lldld</Badge>
         </div>
     );
 }

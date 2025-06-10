@@ -12,6 +12,7 @@
     "@svgr/webpack": "^8.1.0",
     "classnames": "^2.5.1",
     "next": "15.3.3",
+    "next-video": "^2.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-dropzone": "^14.3.8",

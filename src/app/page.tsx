@@ -9,8 +9,13 @@ import Input from '@/components/Input';
 import Table from '@/components/Table';
 import TCell from '@/components/Table/TCell';
 import Video from '@/components/Video';
+import { useEffect } from 'react';
+import { toast } from 'sonner';
 
 export default function Home() {
+    useEffect(() => {
+        toast.success('تست');
+    }, []);
     return (
         <div>
             <Checkbox defaultChecked />

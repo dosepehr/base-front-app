@@ -3,6 +3,8 @@ import { Lato } from 'next/font/google';
 
 import localFont from 'next/font/local';
 import './globals.css';
+import ToastContainer from '@/components/Toast/ToastContainer';
+import { Suspense } from 'react';
 const lato = Lato({
     display: 'swap',
     subsets: ['latin'],
@@ -61,7 +63,12 @@ export default function RootLayout({
             dir='rtl'
             className={`antialiased overflow-x-hidden ${estedad.variable} ${lato.variable}`}
         >
-            <body>{children}</body>
+            <body>
+                <Suspense>
+                    <ToastContainer />
+                </Suspense>
+                {children}
+            </body>
         </html>
     );
 }

@@ -4,6 +4,8 @@ import Checkbox from '@/components/Checkbox';
 import Collapse from '@/components/Collapse';
 import Divider from '@/components/Divider';
 import Dropzone from '@/components/Dropzone';
+import Editor from '@/components/Editor';
+
 export default function Home() {
     return (
         <div>
@@ -12,6 +14,7 @@ export default function Home() {
             <Collapse content='ff' key={'d'} title='lldlld' />
             <Divider>ckkck</Divider>
             <Dropzone onChange={() => {}} title='' />
+            <Editor defaultContent={''} onChange={() => {}} />
         </div>
     );
 }

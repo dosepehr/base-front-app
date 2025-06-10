@@ -1,8 +1,10 @@
-import Breadcrumb from '@/components/Breadcrumb';
+import Button from '@/components/Button';
+import Checkbox from '@/components/Checkbox';
 export default function Home() {
     return (
         <div>
-            <Breadcrumb breadcrumb={[{ link: '/', title: 'نن' }]} />
+            <Checkbox defaultChecked />
+            <Button>fk</Button>
         </div>
     );
 }

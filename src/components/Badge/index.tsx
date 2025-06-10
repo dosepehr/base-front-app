@@ -30,7 +30,7 @@ const Badge: FC<BadgeProps> = ({
     children,
     variant = 'outline',
     size = 'md',
-    theme = 'secondary',
+    theme = 'primary',
     classname,
 }) => {
     const classes = classNames(

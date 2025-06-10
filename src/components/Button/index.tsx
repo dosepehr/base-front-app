@@ -40,7 +40,7 @@ const shapeClasses: Record<ButtonShape, string> = {
     wide: 'btn-wide',
 };
 const Button: FC<ButtonProps> = ({
-    theme = 'default',
+    theme = 'primary',
     variant = 'default',
     size = 'md',
     isDisabled = false,

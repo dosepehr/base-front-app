@@ -4,7 +4,7 @@ import { BreadcrumbProps } from './breadcrumb.type';
 
 const Breadcrumb = ({ breadcrumb }: { breadcrumb: BreadcrumbProps[] }) => {
     return (
-        <div className='text-black font-bold text-xl mb-12 container-right flex items-center justify-between'>
+        <div className='text-black font-bold text-xl mb-12 flex items-center justify-between'>
             <div className='flex gap-x-1'>
                 <Link href='/'>خانه</Link>
                 <p>/</p>

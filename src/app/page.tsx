@@ -6,7 +6,7 @@ export default function Home() {
             <p>متن فارسی</p>
             <p lang='en'>en content</p>
             <Arrow />{' '}
-            <Button variant='soft' theme='primary' size='lg'>
+            <Button variant='soft' theme='primary' size='lg' isLoading>
                 Soft Primary Large
             </Button>
         </div>

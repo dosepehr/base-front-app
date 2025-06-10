@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import classNames from 'classnames';
 
-// import Loading from '../Loading';
+import Loading from '../Loading';
 import { ButtonProps, ButtonShape, ButtonVariant } from './button.types';
 import Arrow from '@/../public/icons/arrow.svg';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
@@ -74,7 +74,7 @@ const Button: FC<ButtonProps> = ({
             {isLoading ? (
                 <>
                     {loadingText}
-                    {/* <Loading size={size} type={loadingType} /> */}
+                    <Loading size={size} type={loadingType} />
                 </>
             ) : (
                 <>

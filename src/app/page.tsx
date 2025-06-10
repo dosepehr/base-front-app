@@ -1,16 +1,8 @@
-import Arrow from '%/arrow.svg';
-import Badge from '@/components/Badge';
-import Button from '@/components/Button';
+import Breadcrumb from '@/components/Breadcrumb';
 export default function Home() {
     return (
         <div>
-            <p>متن فارسی</p>
-            <p lang='en'>en content</p>
-            <Arrow />{' '}
-            <Button variant='soft' theme='primary' size='lg' isLoading>
-                Soft Primary Large
-            </Button>
-            <Badge>lldld</Badge>
+            <Breadcrumb breadcrumb={[{ link: '/', title: 'نن' }]} />
         </div>
     );
 }

@@ -5,6 +5,7 @@ import Collapse from '@/components/Collapse';
 import Divider from '@/components/Divider';
 import Dropzone from '@/components/Dropzone';
 import Editor from '@/components/Editor';
+import Input from '@/components/Input';
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             <Divider>ckkck</Divider>
             <Dropzone onChange={() => {}} title='' />
             <Editor defaultContent={''} onChange={() => {}} />
+            <Input placeholder='f' />
         </div>
     );
 }

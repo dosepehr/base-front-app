@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { InputProps } from './input.type';
 
 import classNames from 'classnames';
-import './style.css'
+import './style.css';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
 const sizeClasses: Record<Size, string> = {
     xs: 'input-xs',
@@ -28,6 +28,8 @@ const Input: FC<InputProps> = ({
     theme = 'primary',
     size = 'md',
     icon,
+    isAnimated,
+    animatedText,
     ...rest
 }) => {
     const classes = classNames(
@@ -38,10 +40,14 @@ const Input: FC<InputProps> = ({
         {
             [`${sizeClasses[size]}`]: size,
         },
+        {
+            ['floating-label']: isAnimated,
+        },
         className
     );
     return (
         <label className={`input w-full ${classes}`}>
+            {isAnimated && <span>{animatedText ?? rest.placeholder}</span>}
             {icon}
             <input type={type} {...rest} />
         </label>
@@ -52,3 +58,4 @@ const Input: FC<InputProps> = ({
 }
 
 export default Input;
+

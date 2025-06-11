@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
 import { TextareaProps } from './textarea.type';
-import { Size } from '@/utils/types/components/size.type';
-import { Theme } from '@/utils/types/components/theme.type';
 import classNames from 'classnames';
+import { Size, Theme } from '@/utils/types/components/component-base.type';
 
 const Textarea: FC<TextareaProps> = ({
     className,
-    theme = 'accent',
+    theme = 'primary',
     size = 'md',
     icon,
     placeholder,

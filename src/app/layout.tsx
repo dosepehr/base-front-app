@@ -6,6 +6,7 @@ import './globals.css';
 import ToastContainer from '@/components/Toast/ToastContainer';
 import { Suspense } from 'react';
 import ReactQueryProvider from '@/utils/api/ReactQueryProvider';
+import NextTopLoader from 'nextjs-toploader';
 const lato = Lato({
     display: 'swap',
     subsets: ['latin'],
@@ -66,6 +67,12 @@ export default function RootLayout({
         >
             <body>
                 <ReactQueryProvider>
+                    <NextTopLoader
+                        color='#ce4648'
+                        shadow='0 0 10px #ce4648,0 0 5px #ce4648'
+                        showSpinner={false}
+                    />
+
                     <Suspense>
                         <ToastContainer />
                     </Suspense>

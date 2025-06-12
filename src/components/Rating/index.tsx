@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { RatingType } from './rating.type';
 
-const Start: FC<RatingType> = ({ ratingId, score, disabled }) => {
+const Rating: FC<RatingType> = ({ ratingId, score, disabled }) => {
     return (
         <div className='rating rating-xs' dir='ltr'>
             <input
@@ -48,5 +48,5 @@ const Start: FC<RatingType> = ({ ratingId, score, disabled }) => {
     );
 };
 
-export default Start;
+export default Rating;
 

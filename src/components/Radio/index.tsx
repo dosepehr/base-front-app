@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
 
 const Radio: FC<RadioProps> = ({
-    theme = 'secondary',
+    theme = 'primary',
     size = 'sm',
     name,
     id,
@@ -14,27 +14,27 @@ const Radio: FC<RadioProps> = ({
     ...rest
 }) => {
     const themeClasses: Record<Theme, string> = {
-        accent: 'checkbox-accent',
-        error: 'checkbox-error',
-        info: 'checkbox-info',
-        neutral: 'checkbox-neutral',
-        primary: 'checkbox-primary',
-        secondary: 'checkbox-secondary',
-        success: 'checkbox-success',
-        warning: 'checkbox-warning',
+        accent: 'radio-accent',
+        error: 'radio-error',
+        info: 'radio-info',
+        neutral: 'radio-neutral',
+        primary: 'radio-primary',
+        secondary: 'radio-secondary',
+        success: 'radio-success',
+        warning: 'radio-warning',
         default: '',
     };
 
     const sizeClasses: Record<Size, string> = {
-        xs: 'checkbox-xs',
-        sm: 'checkbox-sm',
-        md: 'checkbox-md',
-        lg: 'checkbox-lg',
-        xl: 'checkbox-xl',
+        xs: 'radio-xs',
+        sm: 'radio-sm',
+        md: 'radio-md',
+        lg: 'radio-lg',
+        xl: 'radio-xl',
     };
 
     const classes = classNames(
-        'radio checked:text-secondary bg-white',
+        'radio',
         theme && themeClasses[theme],
         size && sizeClasses[size]
     );

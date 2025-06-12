@@ -63,7 +63,7 @@ const Button: FC<ButtonProps> = ({
         },
         { ['group']: isAnimated },
         { 'btn-disabled': isDisabled },
-        { [`btn-${isLink}`]: isLink },
+        { [`btn-link`]: isLink },
         { [`${variantClasses[variant]}`]: variant },
         { [`${themeClasses[theme]}`]: theme },
         { [`${sizeClasses[size]}`]: size },
@@ -80,12 +80,7 @@ const Button: FC<ButtonProps> = ({
                 <>
                     {children}
                     {isAnimated && (
-                        <Arrow
-                            className='[&>path]:fill-[var(--btn-fg)] group-hover:-translate-x-1 transition-transform'
-                            width={20}
-                            height={20}
-                            viewBox='0 0 36 36'
-                        />
+                        <Arrow className='[&>path]:fill-[var(--btn-fg)] group-hover:-translate-x-1 transition-transform' />
                     )}
                 </>
             )}

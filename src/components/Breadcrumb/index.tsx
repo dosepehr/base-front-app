@@ -6,7 +6,7 @@ const Breadcrumb = ({ breadcrumb }: { breadcrumb: BreadcrumbProps[] }) => {
     return (
         <div className='text-black font-bold text-xl mb-12 flex items-center justify-between'>
             <div className='flex gap-x-1'>
-                <Link href='/'>خانه</Link>
+                <Link href='/'>Home</Link>
                 <p>/</p>
                 {breadcrumb.map((item, index) => (
                     <Fragment key={index}>

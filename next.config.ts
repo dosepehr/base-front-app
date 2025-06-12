@@ -8,12 +8,20 @@ const nextConfig: NextConfig = {
             use: [
                 {
                     loader: '@svgr/webpack',
+                },
+                {
+                    loader: 'file-loader',
                     options: {
-                        icon: true,
+                        name: 'static/[path][name].[ext]',
                     },
                 },
             ],
+            type: 'javascript/auto',
+            issuer: {
+                and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+            },
         });
+
         return config;
     },
     experimental: {

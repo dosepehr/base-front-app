@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import Loading from '../Loading';
 import { ButtonProps, ButtonShape, ButtonVariant } from './button.types';
-import Arrow from '@/../public/icons/arrow.svg';
+import Arrow from '%/arrow.svg'
 import { Size, Theme } from '@/utils/types/components/component-base.type';
 
 const variantClasses: Record<ButtonVariant, string> = {

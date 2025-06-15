@@ -1,9 +1,9 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Tooltip from '.';
 import { Theme } from '@/utils/types/components/component-base.type';
 import { Position } from './tooltip.type';
-import type { StoryFn, Args, StoryContext } from '@storybook/react';
+import type { StoryFn, Args, StoryContext } from '@storybook/nextjs-vite';
 type Story = StoryObj<typeof Tooltip>;
 
 const meta: Meta<typeof Tooltip> = {

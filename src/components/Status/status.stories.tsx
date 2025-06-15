@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Status from '.';
 import { Theme, Size } from '@/utils/types/components/component-base.type';
 import { Animation } from './status.type';

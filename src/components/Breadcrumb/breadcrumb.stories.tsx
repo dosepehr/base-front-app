@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Breadcrumb from '.';
 import { BreadcrumbProps } from './breadcrumb.type';
 

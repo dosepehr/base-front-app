@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Textarea from '.';
 import { Theme, Size } from '@/utils/types/components/component-base.type';
 import { FaSearch } from 'react-icons/fa'; // example icon

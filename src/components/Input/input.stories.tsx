@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Input from '.';
 import { InputProps } from './input.type';
 import { Size, Theme } from '@/utils/types/components/component-base.type';

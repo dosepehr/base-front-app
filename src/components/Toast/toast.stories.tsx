@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/nextjs-vite';
 import { toast } from 'sonner';
 import ToastContainer from './ToastContainer';
 import Button from '../Button';

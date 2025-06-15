@@ -23,9 +23,6 @@ const meta: Meta<typeof ToastContainer> = {
 };
 
 export default meta;
-
-export const Default: StoryFn<typeof ToastContainer> = () => <ToastContainer />;
-
 export const Toasts: StoryFn = () => {
     return (
         <>

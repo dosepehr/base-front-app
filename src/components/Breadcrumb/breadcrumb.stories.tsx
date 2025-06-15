@@ -19,14 +19,6 @@ const breadcrumbData1: BreadcrumbProps[] = [
     { title: 'Settings', link: '/dashboard/settings' },
     { title: 'Profile', link: '/dashboard/settings/profile' },
 ];
-
-const breadcrumbData2: BreadcrumbProps[] = [
-    { title: 'Library', link: '/library' },
-    { title: 'Genres', link: '/library/genres' },
-    { title: 'Sci-Fi', link: '/library/genres/sci-fi' },
-    { title: 'Top 10', link: '/library/genres/sci-fi/top-10' },
-];
-
 // === STORIES === //
 
 export const Default: Story = {
@@ -34,10 +26,3 @@ export const Default: Story = {
         breadcrumb: breadcrumbData1,
     },
 };
-
-export const DeepNavigation: Story = {
-    args: {
-        breadcrumb: breadcrumbData2,
-    },
-};
-

@@ -47,7 +47,7 @@ export const Default: Story = {
 
 export const AllVariants: Story = {
     render: (args) => (
-        <div className='flex'>
+        <div className='flex gap-2'>
             {(['dash', 'outline', 'soft'] as BadgeProps['variant'][]).map(
                 (variant) => (
                     <Badge key={variant} {...args} variant={variant}>

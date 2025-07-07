@@ -61,8 +61,8 @@ export default function RootLayout({
 }>) {
     return (
         <html
-            lang='fa'
-            dir='rtl'
+            lang='en'
+            dir='ltr'
             className={`antialiased overflow-x-hidden ${estedad.variable} ${lato.variable}`}
         >
             <body>

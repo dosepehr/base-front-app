@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Input from '.';
-import { InputProps } from './input.type';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
 import { FiSearch } from 'react-icons/fi';
 
@@ -98,13 +97,26 @@ export const AnimatedLabel: Story = {
 };
 
 export const WithIcon: Story = {
-    args: {
-        placeholder: 'Search...',
-        icon: <FiSearch className='text-xl text-neutral' />,
-        theme: 'neutral',
-        size: 'md',
-    },
+    render: () => (
+        <div className='space-y-4'>
+            <Input
+                placeholder='Search...'
+                icon={<FiSearch className='text-xl text-neutral' />}
+                theme='neutral'
+                size='md'
+            />
+            <Input
+                placeholder='Search...'
+                icon={<FiSearch className='text-xl text-neutral' />}
+                theme='neutral'
+                size='md'
+                dir='ltr'
+                iconReverse
+            />
+        </div>
+    ),
 };
+
 export const Number: Story = {
     args: {
         placeholder: 'Age',

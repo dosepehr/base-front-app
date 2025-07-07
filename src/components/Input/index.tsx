@@ -30,6 +30,7 @@ const Input: FC<InputProps> = ({
     icon,
     isAnimated,
     animatedText,
+    iconReverse = false,
     ...rest
 }) => {
     const classes = classNames(
@@ -48,14 +49,15 @@ const Input: FC<InputProps> = ({
     return (
         <label className={`input w-full ${classes}`}>
             {isAnimated && <span>{animatedText ?? rest.placeholder}</span>}
-            {icon}
+
+            {/* show icon at start */}
+            {!iconReverse && icon}
             <input type={type} {...rest} />
+            {/* show icon at end */}
+            {iconReverse && icon}
         </label>
     );
 };
-
-{
-}
 
 export default Input;
 

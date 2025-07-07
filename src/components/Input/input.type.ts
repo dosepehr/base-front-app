@@ -7,6 +7,7 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
     ComponentBase & {
         type?: InputType;
         icon?: React.ReactNode;
+        iconReverse?: boolean;
         isAnimated?: boolean;
         animatedText?: string;
     };

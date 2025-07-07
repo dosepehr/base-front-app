@@ -1,16 +1,18 @@
-import Alert from '@/components/Alert';
-import { FiSearch } from 'react-icons/fi';
-
+import Table from '@/components/Table';
+import TCell from '@/components/Table/TCell';
 export default function Home() {
     return (
         <div className='px-10'>
-            <Alert icon={<FiSearch />} theme='info' variant='dash'>
-                <span>we use cookies for no reason.</span>
-                <div className='space-x-2'>
-                    <button className='btn btn-sm'>Deny</button>
-                    <button className='btn btn-sm btn-primary'>Accept</button>
-                </div>
-            </Alert>
+            <Table headData={['#', 'name']}>
+                <tbody>
+                    <TCell>1</TCell>
+                    <TCell>Sepehr</TCell>
+                </tbody>
+                <tbody>
+                    <TCell>1</TCell>
+                    <TCell>Ali</TCell>
+                </tbody>
+            </Table>
         </div>
     );
 }

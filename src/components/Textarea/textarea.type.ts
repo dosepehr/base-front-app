@@ -1,10 +1,12 @@
-import { ComponentBase } from "@/utils/types/components/component-base.type";
-import { TextareaHTMLAttributes } from "react";
+import { ComponentBase } from '@/utils/types/components/component-base.type';
+import { TextareaHTMLAttributes } from 'react';
 
 export type TextareaProps = Omit<
-  TextareaHTMLAttributes<HTMLTextAreaElement>,
-  "size"
+    TextareaHTMLAttributes<HTMLTextAreaElement>,
+    'size'
 > &
-  ComponentBase & {
-    icon?: React.ReactNode;
-  };
+    ComponentBase & {
+        icon?: React.ReactNode;
+        iconReverse?: boolean;
+    };
+

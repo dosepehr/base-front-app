@@ -9,6 +9,7 @@ const Textarea: FC<TextareaProps> = ({
     size = 'md',
     icon,
     placeholder,
+    iconReverse = false,
     ...rest
 }) => {
     const sizeClasses: Record<Size, string> = {
@@ -38,10 +39,12 @@ const Textarea: FC<TextareaProps> = ({
             [`${sizeClasses[size]}`]: size,
         },
         {
-            'pr-10': icon,
+            'ps-8': icon && !iconReverse,
+            'pe-8': icon && iconReverse,
         },
         className
     );
+
     return (
         <div className='relative'>
             <textarea
@@ -49,7 +52,11 @@ const Textarea: FC<TextareaProps> = ({
                 className={`${classes}`}
                 {...rest}
             ></textarea>
-            <div className='absolute top-2 right-3'>{icon}</div>
+
+            {!iconReverse && (
+                <div className='absolute top-2 start-3'>{icon}</div>
+            )}
+            {iconReverse && <div className='absolute top-2 end-3'>{icon}</div>}
         </div>
     );
 };

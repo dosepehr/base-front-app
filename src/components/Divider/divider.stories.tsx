@@ -5,7 +5,7 @@ import { DividerProps } from './divider.type';
 type Story = StoryObj<typeof Divider>;
 
 const meta: Meta<typeof Divider> = {
-    title: 'components/divider',
+    title: 'components/Divider',
     component: Divider,
     tags: ['autodocs'],
     argTypes: {

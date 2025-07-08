@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import React, { useState } from 'react';
 import Radio from '.';
-import { RadioProps } from './radio.type';
 
 const themes = [
     'primary',

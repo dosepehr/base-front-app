@@ -1,34 +1,20 @@
-import { defineConfig } from '@fullstacksjs/eslint-config';
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import storybook from 'eslint-plugin-storybook';
+
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { FlatCompat } from '@eslint/eslintrc';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Merge all configurations
-export default [
-    // FullstacksJS base config
-    ...defineConfig({
-        typescript: {
-            tsconfigRootDir: __dirname,
-        },
-    }),
+const compat = new FlatCompat({
+    baseDirectory: __dirname,
+});
 
-    // Override conflicting rules to match your Prettier config
-    {
-        rules: {
-            'prettier/prettier': [
-                'error',
-                {
-                    tabWidth: 4,
-                    singleQuote: true,
-                    jsxSingleQuote: true,
-                },
-            ],
-        },
-    },
-
-    // Storybook
+const eslintConfig = [
+    ...compat.extends('next/core-web-vitals', 'next/typescript'),
     ...storybook.configs['flat/recommended'],
 ];
+
+export default eslintConfig;

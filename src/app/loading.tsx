@@ -1,12 +1,12 @@
+import Loading from '@/components/Loading';
 import React from 'react';
 
 const Spinner = () => {
     return (
-        <div>
-            <p className='text-white text-center'>404</p>
+        <div className='mx-auto'>
+            <Loading />
         </div>
     );
 };
 
 export default Spinner;
-

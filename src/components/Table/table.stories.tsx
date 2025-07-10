@@ -1,6 +1,7 @@
 import Table from '.';
 import { Meta, StoryObj } from '@storybook/nextjs-vite';
 import TCell from './TCell';
+import Tr from './Tr';
 
 type Story = StoryObj<typeof Table>;
 
@@ -14,15 +15,14 @@ export default meta;
 export const Default: Story = {
     render: () => (
         <Table headData={['#', 'name']}>
-            <tbody>
+            <Tr>
                 <TCell>1</TCell>
                 <TCell>Sepehr</TCell>
-            </tbody>
-            <tbody>
+            </Tr>
+            <Tr>
                 <TCell>1</TCell>
                 <TCell>Ali</TCell>
-            </tbody>
+            </Tr>
         </Table>
     ),
 };
-

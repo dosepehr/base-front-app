@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import { baseURL } from '@/utils/constants/global';
 import { http, HttpResponse } from 'msw';
 
@@ -9,14 +10,14 @@ export type Post = {
 };
 export let posts: Post[] = [
     {
-        id: '1',
-        title: 'First Post',
-        likes: 5,
+        id: String(faker.number.int(100)),
+        title: faker.string.alpha(10),
+        likes: faker.number.int(100),
     },
     {
-        id: '2',
-        title: 'Second Post',
-        likes: 10,
+        id: String(faker.number.int(100)),
+        title: faker.string.alpha(10),
+        likes: faker.number.int(100),
     },
 ];
 

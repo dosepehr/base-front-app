@@ -8,17 +8,15 @@
         "start": "next start",
         "lint": "next lint",
         "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build",
+        "build-storybook": "storybook build --output-dir .storybook-static-temp && cp -r .storybook-static-temp public/storybook-static && rm -rf .storybook-static-temp",
         "orval": "orval --config ./src/utils/api/generated/orval.config.js"
     },
     "dependencies": {
-        "@faker-js/faker": "^9.9.0",
         "@svgr/webpack": "^8.1.0",
         "@tanstack/react-query": "^5.80.6",
         "axios": "^1.9.0",
         "classnames": "^2.5.1",
         "js-cookie": "^3.0.5",
-        "msw": "^2.10.3",
         "next": "15.3.3",
         "next-video": "^2.2.0",
         "nextjs-toploader": "^3.8.16",
@@ -31,6 +29,8 @@
         "sonner": "^2.0.5"
     },
     "devDependencies": {
+        "@faker-js/faker": "^9.9.0",
+        "msw": "^2.10.3",
         "@chromatic-com/storybook": "^4.0.0",
         "@eslint/eslintrc": "^3",
         "@fullstacksjs/eslint-config": "^13.2.0",

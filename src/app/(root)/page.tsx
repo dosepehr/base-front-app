@@ -1,4 +1,6 @@
-import Divider from '@/components/Divider';
+import Table from '@/components/Table';
+import TCell from '@/components/Table/TCell';
+import Tr from '@/components/Table/Tr';
 import { baseURL } from '@/utils/constants/global';
 
 export default async function Home() {
@@ -7,7 +9,16 @@ export default async function Home() {
     console.log(data);
     return (
         <div className='px-10'>
-            <Divider classname='text-red-500'>Welcome!</Divider>
+            <Table headData={['#', 'name']}>
+                <Tr>
+                    <TCell>1</TCell>
+                    <TCell>sepehr</TCell>
+                </Tr>
+                <Tr>
+                    <TCell>2</TCell>
+                    <TCell>ali</TCell>
+                </Tr>
+            </Table>
         </div>
     );
 }

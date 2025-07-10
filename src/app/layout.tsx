@@ -6,7 +6,8 @@ import { Suspense } from 'react';
 import ReactQueryProvider from '@/utils/api/ReactQueryProvider';
 import NextTopLoader from 'nextjs-toploader';
 import { estedad, lato } from '../../public/fonts';
-
+import { setupMocks } from '@/utils/api/mocks';
+setupMocks();
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -41,4 +42,3 @@ export default function MainLayout({
         </html>
     );
 }
-

@@ -8,20 +8,12 @@ const nextConfig: NextConfig = {
             use: [
                 {
                     loader: '@svgr/webpack',
-                },
-                {
-                    loader: 'file-loader',
                     options: {
-                        name: 'static/[path][name].[ext]',
+                        icon: true,
                     },
                 },
             ],
-            type: 'javascript/auto',
-            issuer: {
-                and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-            },
         });
-
         return config;
     },
     experimental: {
@@ -38,7 +30,7 @@ const nextConfig: NextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'irantogermany-api.liara.run',
+                hostname: 'example.com',
             },
         ],
     },
@@ -54,6 +46,6 @@ const nextConfig: NextConfig = {
         // your project has ESLint errors.
         ignoreDuringBuilds: true,
     },
+    output: 'standalone',
 };
 export default nextConfig;
-

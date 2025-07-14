@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@theme {
+
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 36rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 62rem;
+  --breakpoint-xl: 75rem;
+  --breakpoint-2xl: 90rem;
+
+  /* radius */
+  --radius-10: 0.625rem;
+  --radius-20: 1.25rem;
+}
+
+
+
 @plugin "daisyui" {
   themes: light --default;
   exclude: rootscrollgutter;
@@ -36,4 +52,31 @@ html {
 
 :lang(en) {
   font-family: var(--font-lato);
+}
+
+
+@utility container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+
+
+img {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--color-neutral-content);
+  background: var(--color-neutral)
+}
+
+::selection {
+  color: var(--color-neutral-content);
+  background: var(--color-neutral)
 }

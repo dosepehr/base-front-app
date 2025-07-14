@@ -1,4 +1,3 @@
-
 import React, { FC } from 'react';
 import { RadioProps } from './radio.type';
 import classNames from 'classnames';
@@ -11,6 +10,7 @@ const Radio: FC<RadioProps> = ({
     id,
     checked,
     onChange,
+    label,
     ...rest
 }) => {
     const themeClasses: Record<Theme, string> = {
@@ -36,21 +36,23 @@ const Radio: FC<RadioProps> = ({
     const classes = classNames(
         'radio',
         theme && themeClasses[theme],
-        size && sizeClasses[size]
+        size && sizeClasses[size],
     );
 
     return (
-        <input
-            type='radio'
-            id={id}
-            name={name}
-            checked={checked}
-            onChange={onChange}
-            className={classes}
-            {...rest}
-        />
+        <label className='cursor-pointer' >
+            <input
+                type='radio'
+                id={id}
+                name={name}
+                checked={checked}
+                onChange={onChange}
+                className={classes}
+                {...rest}
+            />
+            <span className='mx-1'>{label}</span>
+        </label>
     );
 };
 
 export default Radio;
-

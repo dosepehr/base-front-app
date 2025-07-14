@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import React, { useState } from 'react';
+import React from 'react';
 import Radio from '.';
 
 const themes = [
@@ -48,65 +48,20 @@ export const Default: Story = {
     },
 };
 
-export const GroupedRadios: Story = {
-    render: () => {
-        const [selected, setSelected] = useState('option1');
-
-        return (
-            <div style={{ display: 'flex', gap: 24 }}>
-                <label>
-                    <Radio
-                        name='group'
-                        id='option1'
-                        checked={selected === 'option1'}
-                        onChange={() => setSelected('option1')}
-                        theme='primary'
-                        size='md'
-                    />
-                    Option 1
-                </label>
-                <label>
-                    <Radio
-                        name='group'
-                        id='option2'
-                        checked={selected === 'option2'}
-                        onChange={() => setSelected('option2')}
-                        theme='success'
-                        size='md'
-                    />
-                    Option 2
-                </label>
-                <label>
-                    <Radio
-                        name='group'
-                        id='option3'
-                        checked={selected === 'option3'}
-                        onChange={() => setSelected('option3')}
-                        theme='warning'
-                        size='md'
-                    />
-                    Option 3
-                </label>
-            </div>
-        );
-    },
-};
-
 export const AllThemes: Story = {
     render: () => {
         return (
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
                 {themes.map((theme) => (
-                    <label key={theme}>
-                        <Radio
-                            name='theme-group'
-                            id={`theme-${theme}`}
-                            theme={theme}
-                            size='md'
-                            onChange={() => {}}
-                        />
-                        {theme}
-                    </label>
+                    <Radio
+                        key={theme}
+                        name='theme-group'
+                        id={`theme-${theme}`}
+                        theme={theme}
+                        size='md'
+                        onChange={() => {}}
+                        label={theme}
+                    />
                 ))}
             </div>
         );
@@ -118,19 +73,17 @@ export const AllSizes: Story = {
         return (
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
                 {sizes.map((size) => (
-                    <label key={size}>
-                        <Radio
-                            name='size-group'
-                            id={`size-${size}`}
-                            size={size}
-                            theme='primary'
-                            onChange={() => {}}
-                        />
-                        {size}
-                    </label>
+                    <Radio
+                        key={size}
+                        name='size-group'
+                        id={`size-${size}`}
+                        size={size}
+                        theme='primary'
+                        onChange={() => {}}
+                        label={size}
+                    />
                 ))}
             </div>
         );
     },
 };
-

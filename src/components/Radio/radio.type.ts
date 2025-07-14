@@ -1,4 +1,8 @@
-import { ComponentBase, Size, Theme } from '@/utils/types/components/component-base.type';
+import {
+    ComponentBase,
+    Size,
+    Theme,
+} from '@/utils/types/components/component-base.type';
 import { InputHTMLAttributes } from 'react';
 
 export type RadioProps = ComponentBase &
@@ -6,5 +10,5 @@ export type RadioProps = ComponentBase &
         theme?: Theme;
         size?: Size;
         name: string;
+        label?: string;
     };
-

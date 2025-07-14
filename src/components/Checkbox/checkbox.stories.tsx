@@ -91,6 +91,7 @@ export const AllThemes: Story = {
                     key={theme}
                     label={theme}
                     theme={theme as CheckboxProps['theme']}
+                    defaultChecked
                 />
             ))}
         </div>

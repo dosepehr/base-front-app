@@ -7,6 +7,9 @@ const meta: Meta<typeof Progress> = {
     component: Progress,
     tags: ['autodocs'],
     argTypes: {
+        value: {
+            control: { type: 'range', min: 0, max: 100, step: 1 },
+        },
         theme: {
             control: 'select',
             options: [
@@ -62,4 +65,3 @@ export const AllThemes: Story = {
         </div>
     ),
 };
-

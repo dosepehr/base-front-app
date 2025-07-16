@@ -1,7 +1,9 @@
-import type { NextConfig } from 'next';
+import { NextConfig } from 'next';
+import withPWA from 'next-pwa';
 
-const nextConfig: NextConfig = {
-    /* config options here */
+const isDev = process.env.NODE_ENV === 'development';
+
+const nextConfig = {
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
@@ -35,17 +37,17 @@ const nextConfig: NextConfig = {
         ],
     },
     typescript: {
-        // !! WARN !!
-        // Dangerously allow production builds to successfully complete even if
-        // your project has type errors.
-        // !! WARN !!
         ignoreBuildErrors: true,
     },
     eslint: {
-        // Warning: This allows production builds to successfully complete even if
-        // your project has ESLint errors.
         ignoreDuringBuilds: true,
     },
     output: 'standalone',
-};
-export default nextConfig;
+} satisfies NextConfig;
+
+export default withPWA({
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    disable: isDev,
+})(nextConfig);

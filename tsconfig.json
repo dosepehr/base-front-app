@@ -22,6 +22,7 @@
       "@/*": ["./src/*"],
       "#/*": ["./public/images/*"],
       "%/*": ["./public/icons/*"],
+      "fonts": ["./public/fonts/index"],
       "c/*": ["./src/components/*"]
     }
   },

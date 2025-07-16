@@ -5,7 +5,7 @@ import ToastContainer from '@/components/Toast/ToastContainer';
 import { Suspense } from 'react';
 import ReactQueryProvider from '@/utils/api/ReactQueryProvider';
 import NextTopLoader from 'nextjs-toploader';
-import { estedad, lato } from '../../public/fonts';
+import { estedad, lato } from 'fonts';
 import { setupMocks } from '@/utils/api/mocks';
 setupMocks();
 

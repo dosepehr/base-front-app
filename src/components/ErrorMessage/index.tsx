@@ -9,7 +9,7 @@ const ErrorMessage = <T extends FieldValues>({
     const message = errors?.[field]?.message;
     return (
         <>
-            {message && <p className='text-error text-sm'>{String(message)}</p>}
+            {message && <p className='text-error text-sm mt-1'>{String(message)}</p>}
         </>
     );
 };

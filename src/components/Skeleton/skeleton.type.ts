@@ -1,6 +1,4 @@
 export type SkeletonProps = {
-    width: `w-${number}`;
-    height: `h-${number}`;
     classname?: string;
+    children?: React.ReactNode;
 };
-

@@ -13,15 +13,14 @@ type Story = StoryObj<typeof Skeleton>;
 
 export const Default: Story = {
     render: () => {
-        return <Skeleton width='w-20' height='h-20' />;
+        return <Skeleton classname='w-20 h-20' />;
     },
 };
 export const Multiple: Story = {
     render: () => (
         <div className='flex gap-4 items-center'>
-            <Skeleton width='w-20' height='h-4' />
-            <Skeleton width='w-20' height='h-20' classname='rounded-full' />
+            <Skeleton classname='w-20 h-4' />
+            <Skeleton classname='rounded-full w-20 h-4' />
         </div>
     ),
 };
-

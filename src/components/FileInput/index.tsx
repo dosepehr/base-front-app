@@ -26,6 +26,7 @@ const FileInput: FC<FileInputProps> = ({
     className,
     theme = 'primary',
     size = 'md',
+    ...rest
 }) => {
     const classes = classNames(
         'file-input',
@@ -35,14 +36,13 @@ const FileInput: FC<FileInputProps> = ({
         {
             [`${sizeClasses[size]}`]: size,
         },
-        className
+        className,
     );
     return (
         <div>
-            <input type='file' className={classes} />
+            <input type='file' className={classes} {...rest} />
         </div>
     );
 };
 
 export default FileInput;
-

@@ -1,4 +1,3 @@
-import ChatBubble from '@/components/ChatBubble';
 import Table from '@/components/Table';
 import TCell from '@/components/Table/TCell';
 import Tr from '@/components/Table/Tr';
@@ -19,7 +18,6 @@ export default async function Home() {
                     </Tr>
                 ))}
             </Table>
-            <ChatBubble position='end' theme='error'>lflfl</ChatBubble>
         </div>
     );
 }

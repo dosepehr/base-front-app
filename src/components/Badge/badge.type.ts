@@ -5,5 +5,4 @@ export type BadgeProps = Omit<ComponentBase, 'isDisabled'> & {
     children: React.ReactNode;
 };
 
-export type BadgeVariant = 'soft' | 'outline' | 'dash';
-
+export type BadgeVariant = 'soft' | 'outline' | 'dash' | 'default';

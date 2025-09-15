@@ -7,6 +7,7 @@ const variantClasses: Record<BadgeVariant, string> = {
     dash: 'badge-dash',
     outline: 'badge-outline',
     soft: 'badge-soft',
+    default: '',
 };
 const themeClasses: Record<Theme, string> = {
     accent: 'badge-accent',
@@ -28,7 +29,7 @@ const sizeClasses: Record<Size, string> = {
 };
 const Badge: FC<BadgeProps> = ({
     children,
-    variant = 'outline',
+    variant = 'default',
     size = 'md',
     theme = 'primary',
     classname,
@@ -40,10 +41,9 @@ const Badge: FC<BadgeProps> = ({
         },
         { [`${sizeClasses[size]}`]: size },
         { [`${themeClasses[theme]}`]: theme },
-        classname
+        classname,
     );
     return <div className={classes}>{children}</div>;
 };
 
 export default Badge;
-

@@ -36,11 +36,13 @@ const Select: FC<SelectProps> = ({
         {
             [`${sizeClasses[size]}`]: size,
         },
-        className
+        className,
     );
     return (
-        <select defaultValue={options.title} className={classes} {...rest}>
-            <option disabled={true}>{options.title}</option>
+        <select defaultValue='' className={classes} {...rest}>
+            <option value='' disabled>
+                {options.title}
+            </option>
 
             {options.options.map((opt, i) => (
                 <option key={i} value={opt.value}>
@@ -52,5 +54,3 @@ const Select: FC<SelectProps> = ({
 };
 
 export default Select;
-
-

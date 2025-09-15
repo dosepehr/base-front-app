@@ -1,17 +1,14 @@
 import React from 'react';
 import { TableType } from './table.types';
-const Table = ({ headData, children }: TableType) => {
+const Table = ({ headData, children, classname }: TableType) => {
     return (
-        <div className='mx-auto w-full max-w-5xl'>
+        <div className={`mx-auto w-full max-w-5xl ${classname}`}>
             <div className='overflow-x-auto rounded-t-3xl border border-[#B9B9B9] rounded-b-lg'>
                 <table className='table overflow-hidden rounded-t-3xl bg-white'>
                     <thead className='rounded-t-3xl bg-yellow-1'>
                         <tr>
                             {headData.map((data, i) => (
-                                <th
-                                    className='text-lg font-light'
-                                    key={i}
-                                >
+                                <th className='bg-primary text-white' key={i}>
                                     {data}
                                 </th>
                             ))}
@@ -26,4 +23,3 @@ const Table = ({ headData, children }: TableType) => {
 };
 
 export default Table;
-

@@ -7,6 +7,7 @@ import ReactQueryProvider from '@/utils/api/ReactQueryProvider';
 import NextTopLoader from 'nextjs-toploader';
 import { estedad, lato } from 'fonts';
 import { setupMocks } from '@/utils/api/mocks';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 setupMocks();
 
 export const metadata: Metadata = {
@@ -162,11 +163,12 @@ export default function MainLayout({
                         shadow='0 0 10px #ce4648,0 0 5px #ce4648'
                         showSpinner={false}
                     />
-
-                    <Suspense>
-                        <ToastContainer />
-                    </Suspense>
-                    {children}
+                    <NuqsAdapter>
+                        <Suspense>
+                            <ToastContainer />
+                        </Suspense>
+                        {children}
+                    </NuqsAdapter>
                 </ReactQueryProvider>
             </body>
         </html>

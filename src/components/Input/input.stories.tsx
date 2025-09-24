@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Input from '.';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
 import { Search } from 'lucide-react';
-
+import PasswordInput from './PasswordInput';
 const themes: Theme[] = [
     'primary',
     'secondary',
@@ -124,4 +124,8 @@ export const Number: Story = {
         size: 'md',
         type: 'number',
     },
+};
+
+export const Password: StoryObj<typeof Input> = {
+    render: () => <PasswordInput />,
 };

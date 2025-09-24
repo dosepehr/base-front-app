@@ -76,6 +76,13 @@ export const Loading: Story = {
         theme: 'success',
     },
 };
+export const WithIcon: Story = {
+    args: {
+        children: 'See More',
+        isAnimated: true,
+        theme: 'neutral',
+    },
+};
 
 export const Disabled: Story = {
     args: {
@@ -119,7 +126,7 @@ export const AllThemes: Story = {
                     <Button key={theme} {...args} theme={theme}>
                         {theme}
                     </Button>
-                )
+                ),
             )}
         </div>
     ),
@@ -138,7 +145,7 @@ export const AllVariants: Story = {
                     <Button key={variant} {...args} variant={variant}>
                         {variant}
                     </Button>
-                )
+                ),
             )}
         </div>
     ),
@@ -157,7 +164,7 @@ export const AllSizes: Story = {
                     <Button key={size} {...args} size={size}>
                         {size}
                     </Button>
-                )
+                ),
             )}
         </div>
     ),
@@ -176,7 +183,7 @@ export const AllShapes: Story = {
                     <Button key={shape} {...args} shape={shape}>
                         {shape}
                     </Button>
-                )
+                ),
             )}
         </div>
     ),
@@ -185,4 +192,3 @@ export const AllShapes: Story = {
         variant: 'outline',
     },
 };
-

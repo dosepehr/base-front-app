@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
-
 import classNames from 'classnames';
-
 import Loading from '../Loading';
 import { ButtonProps, ButtonShape, ButtonVariant } from './button.types';
-import Arrow from '%/arrow.svg'
 import { Size, Theme } from '@/utils/types/components/component-base.type';
+import { CircleArrowRight } from 'lucide-react';
 
 const variantClasses: Record<ButtonVariant, string> = {
     default: '',
@@ -67,7 +65,7 @@ const Button: FC<ButtonProps> = ({
         { [`${variantClasses[variant]}`]: variant },
         { [`${themeClasses[theme]}`]: theme },
         { [`${sizeClasses[size]}`]: size },
-        { [`${shapeClasses[shape]}`]: shape }
+        { [`${shapeClasses[shape]}`]: shape },
     );
     return (
         <button type={type} className={classes} {...rest}>
@@ -80,7 +78,7 @@ const Button: FC<ButtonProps> = ({
                 <>
                     {children}
                     {isAnimated && (
-                        <Arrow className='[&>path]:fill-[var(--btn-fg)] group-hover:-translate-x-1 transition-transform' />
+                        <CircleArrowRight className='group-hover:translate-x-1 transition-transform' size={16} />
                     )}
                 </>
             )}
@@ -89,4 +87,3 @@ const Button: FC<ButtonProps> = ({
 };
 
 export default Button;
-

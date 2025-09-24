@@ -3,6 +3,8 @@ import Input from '.';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
 import { Search } from 'lucide-react';
 import PasswordInput from './PasswordInput';
+import OtpInput from './OtpInput';
+import { useState } from 'react';
 const themes: Theme[] = [
     'primary',
     'secondary',
@@ -128,4 +130,19 @@ export const Number: Story = {
 
 export const Password: StoryObj<typeof Input> = {
     render: () => <PasswordInput />,
+};
+
+export const Otp: StoryObj<typeof OtpInput> = {
+    render: () => {
+        const [code, setCode] = useState<string[]>(Array(6).fill(''));
+        return (
+            <div>
+                <OtpInput
+                    value={code}
+                    onChange={setCode}
+                    theme='info'
+                />
+            </div>
+        );
+    },
 };

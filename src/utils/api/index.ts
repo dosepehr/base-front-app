@@ -2,8 +2,9 @@ import axios from 'axios';
 import { baseURL } from '../constants/global';
 import { ApiError } from '../types/DTO/http-errors-interface';
 import { errorHandler, networkErrorStrategy } from './http-error-strategies';
-import Cookies from 'js-cookie';
+import Cookies from 'universal-cookie';
 
+const cookies = new Cookies();
 const httpService = axios.create({
     baseURL,
     headers: {
@@ -26,11 +27,11 @@ httpService.interceptors.response.use(
         } else {
             networkErrorStrategy();
         }
-    }
+    },
 );
 httpService.interceptors.request.use(
     (config) => {
-        const token = Cookies.get('token');
+        const token = cookies.get('token');
         if (token) {
             config.headers.authorization = `Bearer ${token}`;
         }
@@ -38,10 +39,9 @@ httpService.interceptors.request.use(
     },
     (error) => {
         return Promise.reject(error);
-    }
+    },
 );
 
 const api = {};
 
 export default api;
-

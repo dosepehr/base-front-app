@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Textarea from '.';
 import { Theme, Size } from '@/utils/types/components/component-base.type';
-import { FiSearch } from 'react-icons/fi';
+import { Search } from 'lucide-react';
 
 const meta: Meta<typeof Textarea> = {
     title: 'components/Textarea',
@@ -47,11 +47,11 @@ export const WithIcon: Story = {
     render: () => (
         <div className='space-y-4'>
             <Textarea
-                icon={<FiSearch className='text-xl text-neutral' />}
+                icon={<Search className='text-xl text-neutral' />}
                 placeholder='Search...'
             />
             <Textarea
-                icon={<FiSearch className='text-xl text-neutral' />}
+                icon={<Search className='text-xl text-neutral' />}
                 placeholder='Search...'
                 iconReverse
             />
@@ -96,4 +96,3 @@ export const AllSizes: Story = {
         </div>
     ),
 };
-

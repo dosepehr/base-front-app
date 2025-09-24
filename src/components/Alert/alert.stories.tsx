@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Alert from './index';
 import { AlertProps } from './alert.type';
-import { FiSearch } from 'react-icons/fi';
+import { Search } from 'lucide-react';
 import Button from '../Button';
 
 const meta: Meta<typeof Alert> = {
@@ -85,13 +85,13 @@ export const WithIcon: Story = {
         children: 'This alert includes an icon!',
         theme: 'success',
         variant: 'soft',
-        icon: <FiSearch />,
+        icon: <Search />,
     },
 };
 
 export const WithActions: Story = {
     render: (args) => (
-        <Alert {...args} icon={<FiSearch />} theme='info' variant='default'>
+        <Alert {...args} icon={<Search />} theme='info' variant='default'>
             <span className='flex-1'>We use cookies for no reason.</span>
             <div className='space-x-2'>
                 <Button size='sm' theme='error'>

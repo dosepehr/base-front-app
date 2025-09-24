@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Input from '.';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
-import { FiSearch } from 'react-icons/fi';
+import { Search } from 'lucide-react';
 
 const themes: Theme[] = [
     'primary',
@@ -101,13 +101,13 @@ export const WithIcon: Story = {
         <div className='space-y-4'>
             <Input
                 placeholder='Search...'
-                icon={<FiSearch className='text-xl text-neutral' />}
+                icon={<Search className='text-xl text-neutral' />}
                 theme='neutral'
                 size='md'
             />
             <Input
                 placeholder='Search...'
-                icon={<FiSearch className='text-xl text-neutral' />}
+                icon={<Search className='text-xl text-neutral' />}
                 theme='neutral'
                 size='md'
                 dir='ltr'
@@ -125,4 +125,3 @@ export const Number: Story = {
         type: 'number',
     },
 };
-

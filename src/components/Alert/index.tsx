@@ -30,9 +30,9 @@ const Alert: FC<AlertProps> = ({
         outline: 'alert-outline',
         soft: 'alert-soft',
     };
-    const iconProps = { size: 20,};
+    const iconProps = { size: 20 };
 
-    const variantDefaultClasses: Record<AlertThemes, React.ReactNode> = {
+    const variantDefaultIcons: Record<AlertThemes, React.ReactNode> = {
         default: <CircleQuestionMark {...iconProps} />,
         error: <XCircle {...iconProps} />,
         info: <Info {...iconProps} />,
@@ -54,7 +54,7 @@ const Alert: FC<AlertProps> = ({
     );
     return (
         <div role='alert' className={classes}>
-            {icon || variantDefaultClasses[theme]}
+            {icon || variantDefaultIcons[theme]}
             {children}
         </div>
     );

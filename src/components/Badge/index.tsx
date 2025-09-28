@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { BadgeProps, BadgeVariant } from './badge.type';
 import classNames from 'classnames';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
+import { Info, CheckCircle, AlertTriangle, XCircle } from 'lucide-react';
 
 const variantClasses: Record<BadgeVariant, string> = {
     dash: 'badge-dash',
@@ -27,12 +28,22 @@ const sizeClasses: Record<Size, string> = {
     lg: 'badge-lg',
     xl: 'badge-xl',
 };
+const iconProps = { size: 16 };
+
+const variantDefaultIcons: Partial<Record<Theme, React.ReactNode>> = {
+    error: <XCircle {...iconProps} />,
+    info: <Info {...iconProps} />,
+    success: <CheckCircle {...iconProps} />,
+    warning: <AlertTriangle {...iconProps} />,
+};
+
 const Badge: FC<BadgeProps> = ({
     children,
     variant = 'default',
     size = 'md',
     theme = 'primary',
     classname,
+    showIcon,
 }) => {
     const classes = classNames(
         'badge',
@@ -43,7 +54,12 @@ const Badge: FC<BadgeProps> = ({
         { [`${themeClasses[theme]}`]: theme },
         classname,
     );
-    return <div className={classes}>{children}</div>;
+    return (
+        <div className={classes}>
+            {showIcon && variantDefaultIcons[theme]}
+            {children}
+        </div>
+    );
 };
 
 export default Badge;

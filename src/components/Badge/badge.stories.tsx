@@ -9,7 +9,7 @@ const meta: Meta<typeof Badge> = {
     argTypes: {
         variant: {
             control: 'select',
-            options: ['dash', 'outline', 'soft'],
+            options: ['default', 'dash', 'outline', 'soft'],
         },
         theme: {
             control: 'select',
@@ -39,7 +39,6 @@ type Story = StoryObj<typeof Badge>;
 export const Default: Story = {
     args: {
         children: 'Badge',
-        variant: 'outline',
         size: 'md',
         theme: 'primary',
     },
@@ -48,13 +47,18 @@ export const Default: Story = {
 export const AllVariants: Story = {
     render: (args) => (
         <div className='flex gap-2'>
-            {(['dash', 'outline', 'soft'] as BadgeProps['variant'][]).map(
-                (variant) => (
-                    <Badge key={variant} {...args} variant={variant}>
-                        {variant} badge
-                    </Badge>
-                )
-            )}
+            {(
+                [
+                    'default',
+                    'dash',
+                    'outline',
+                    'soft',
+                ] as BadgeProps['variant'][]
+            ).map((variant) => (
+                <Badge key={variant} {...args} variant={variant}>
+                    {variant} badge
+                </Badge>
+            ))}
         </div>
     ),
     args: {
@@ -99,7 +103,7 @@ export const AllSizes: Story = {
                     <Badge key={size} {...args} size={size}>
                         {size}
                     </Badge>
-                )
+                ),
             )}
         </div>
     ),
@@ -109,3 +113,25 @@ export const AllSizes: Story = {
     },
 };
 
+export const WithIcon: Story = {
+    render: (args) => (
+        <div className='flex flex-wrap gap-2'>
+            {(
+                [
+               
+                    'info',
+                    'success',
+                    'warning',
+                    'error',
+                ] as BadgeProps['theme'][]
+            ).map((theme) => (
+                <Badge key={theme} {...args} theme={theme} showIcon>
+                    {theme} badge
+                </Badge>
+            ))}
+        </div>
+    ),
+    args: {
+        size: 'md',
+    },
+};

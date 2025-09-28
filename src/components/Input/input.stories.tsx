@@ -5,6 +5,8 @@ import { Search } from 'lucide-react';
 import PasswordInput from './PasswordInput';
 import OtpInput from './OtpInput';
 import { useState } from 'react';
+import { FieldError } from 'react-hook-form';
+
 const themes: Theme[] = [
     'primary',
     'secondary',
@@ -24,26 +26,15 @@ const meta: Meta<typeof Input> = {
     component: Input,
     tags: ['autodocs'],
     argTypes: {
-        theme: {
-            control: 'select',
-            options: themes,
-        },
-        size: {
-            control: 'select',
-            options: sizes,
-        },
-        type: {
-            control: 'text',
-        },
-        placeholder: {
-            control: 'text',
-        },
-        isAnimated: {
-            control: 'boolean',
-        },
-        animatedText: {
-            control: 'text',
-        },
+        theme: { control: 'select', options: themes },
+        size: { control: 'select', options: sizes },
+        type: { control: 'text' },
+        placeholder: { control: 'text' },
+        isAnimated: { control: 'boolean' },
+        animatedText: { control: 'text' },
+        iconReverse: { control: 'boolean' },
+        hideError: { control: 'boolean' },
+        isOutline: { control: 'boolean' },
     },
 };
 
@@ -137,12 +128,39 @@ export const Otp: StoryObj<typeof OtpInput> = {
         const [code, setCode] = useState<string[]>(Array(6).fill(''));
         return (
             <div>
-                <OtpInput
-                    value={code}
-                    onChange={setCode}
-                    theme='info'
-                />
+                <OtpInput value={code} onChange={setCode} theme='info' />
             </div>
         );
+    },
+};
+
+export const WithLabelAndOutline: Story = {
+    args: {
+        placeholder: 'Full name',
+        labelText: 'Name',
+        theme: 'primary',
+        size: 'md',
+        isOutline: true,
+    },
+};
+
+export const WithErrorMessage: Story = {
+    args: {
+        placeholder: 'Email',
+        theme: 'primary',
+        size: 'md',
+        name: 'email',
+        errors: { email: { message: 'Invalid email address' } as FieldError },
+    },
+};
+
+export const HideError: Story = {
+    args: {
+        placeholder: 'Email',
+        theme: 'primary',
+        size: 'md',
+        name: 'email',
+        errors: { email: { message: 'Invalid email address' } as FieldError },
+        hideError: true,
     },
 };

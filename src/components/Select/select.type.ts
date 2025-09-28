@@ -7,6 +7,7 @@ export type SelectProps = Omit<
 > &
     ComponentBase & {
         options: OptionsType;
+        labelText?: string;
     };
 
 export type OptionsType = {
@@ -16,4 +17,3 @@ export type OptionsType = {
         value: string | number;
     }[];
 };
-

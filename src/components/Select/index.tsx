@@ -26,6 +26,8 @@ const Select: FC<SelectProps> = ({
     className,
     theme = 'primary',
     size = 'md',
+    labelText,
+    isDisabled,
     ...rest
 }) => {
     const classes = classNames(
@@ -39,17 +41,27 @@ const Select: FC<SelectProps> = ({
         className,
     );
     return (
-        <select defaultValue='' className={classes} {...rest}>
-            <option value='' disabled>
-                {options.title}
-            </option>
-
-            {options.options.map((opt, i) => (
-                <option key={i} value={opt.value}>
-                    {opt.title}
+        <fieldset className='fieldset'>
+            {labelText && (
+                <legend className='fieldset-legend'>{labelText}</legend>
+            )}
+            <select
+                defaultValue=''
+                className={classes}
+                {...rest}
+                disabled={isDisabled}
+            >
+                <option value='' disabled>
+                    {options.title}
                 </option>
-            ))}
-        </select>
+
+                {options.options.map((opt, i) => (
+                    <option key={i} value={opt.value}>
+                        {opt.title}
+                    </option>
+                ))}
+            </select>
+        </fieldset>
     );
 };
 

@@ -96,3 +96,19 @@ export const AllSizes: Story = {
         </div>
     ),
 };
+export const WithLabel: Story = {
+    args: {
+        placeholder: 'Enter your address',
+        labelText: 'Address',
+        theme: 'primary',
+        size: 'md',
+    },
+};
+export const Outlined: Story = {
+    args: {
+        placeholder: 'Enter your address',
+        theme: 'info',
+        size: 'md',
+        isOutline: true,
+    },
+};

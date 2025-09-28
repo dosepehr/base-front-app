@@ -1,6 +1,13 @@
 import React, { FC } from 'react';
 import { AlertProps, AlertThemes, AlertVariants } from './alert.type';
 import classNames from 'classnames';
+import {
+    Info,
+    CheckCircle,
+    AlertTriangle,
+    XCircle,
+    CircleQuestionMark,
+} from 'lucide-react';
 
 const Alert: FC<AlertProps> = ({
     children,
@@ -23,6 +30,15 @@ const Alert: FC<AlertProps> = ({
         outline: 'alert-outline',
         soft: 'alert-soft',
     };
+    const iconProps = { size: 20,};
+
+    const variantDefaultClasses: Record<AlertThemes, React.ReactNode> = {
+        default: <CircleQuestionMark {...iconProps} />,
+        error: <XCircle {...iconProps} />,
+        info: <Info {...iconProps} />,
+        success: <CheckCircle {...iconProps} />,
+        warning: <AlertTriangle {...iconProps} />,
+    };
     const classes = classNames(
         'alert',
         {
@@ -34,15 +50,14 @@ const Alert: FC<AlertProps> = ({
         {
             'alert-vertical  sm:alert-horizontal': isResponsive,
         },
-        classname
+        classname,
     );
     return (
         <div role='alert' className={classes}>
-            {icon}
+            {icon || variantDefaultClasses[theme]}
             {children}
         </div>
     );
 };
 
 export default Alert;
-

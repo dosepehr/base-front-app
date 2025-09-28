@@ -10,5 +10,5 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
         iconReverse?: boolean;
         isAnimated?: boolean;
         animatedText?: string;
+        labelText?: string;
     };
-

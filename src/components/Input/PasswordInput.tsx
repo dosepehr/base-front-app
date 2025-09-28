@@ -15,11 +15,13 @@ const PasswordInput: FC<InputProps> = ({ ...args }) => {
                     <EyeClosed
                         className='cursor-pointer'
                         onClick={() => setShowPassword(false)}
+                        tabIndex={-1}
                     />
                 ) : (
                     <Eye
                         className='cursor-pointer'
                         onClick={() => setShowPassword(true)}
+                        tabIndex={-1}
                     />
                 )
             }

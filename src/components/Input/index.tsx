@@ -31,10 +31,11 @@ const Input: FC<InputProps> = ({
     isAnimated,
     animatedText,
     iconReverse = false,
+    labelText,
     ...rest
 }) => {
     const classes = classNames(
-        'w-full',
+        'input w-full',
         {
             [`${themeClasses[theme]}`]: theme,
         },
@@ -44,20 +45,24 @@ const Input: FC<InputProps> = ({
         {
             ['floating-label']: isAnimated,
         },
-        className
+        className,
     );
     return (
-        <label className={`input w-full ${classes}`}>
-            {isAnimated && <span>{animatedText ?? rest.placeholder}</span>}
+        <div className='fieldset'>
+            {labelText && (
+                <legend className='fieldset-legend'>{labelText}</legend>
+            )}
+            <label className={classes}>
+                {isAnimated && <span>{animatedText ?? rest.placeholder}</span>}
 
-            {/* show icon at start */}
-            {!iconReverse && icon}
-            <input type={type} {...rest} />
-            {/* show icon at end */}
-            {iconReverse && icon}
-        </label>
+                {/* show icon at start */}
+                {!iconReverse && icon}
+                <input type={type} {...rest} />
+                {/* show icon at end */}
+                {iconReverse && icon}
+            </label>
+        </div>
     );
 };
 
 export default Input;
-

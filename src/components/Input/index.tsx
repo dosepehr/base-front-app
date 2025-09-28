@@ -33,11 +33,12 @@ const Input: FC<InputProps> = ({
     icon,
     isAnimated,
     animatedText,
-    iconReverse = false,
+    iconReverse,
     labelText,
     errors,
     name,
     hideError,
+    isOutline,
     ...rest
 }) => {
     const message = name && errors?.[name]?.message;
@@ -45,13 +46,18 @@ const Input: FC<InputProps> = ({
     const classes = classNames(
         'input w-full',
         {
-            [`${themeClasses[theme]}`]: theme,
+            // Apply 'input-error' if there is a message, otherwise apply theme class
+            [`input-error`]: message,
+            [`${themeClasses[theme]}`]: !message && theme,
         },
         {
             [`${sizeClasses[size]}`]: size,
         },
         {
             ['floating-label']: isAnimated,
+        },
+        {
+            'focus-within:outline-none': !isOutline,
         },
         className,
     );
@@ -63,8 +69,10 @@ const Input: FC<InputProps> = ({
             )}
             <label className={classes}>
                 {isAnimated && <span>{animatedText ?? rest.placeholder}</span>}
+                {/* Icon on left */}
                 {!iconReverse && icon}
                 <input type={type} name={name} {...rest} />
+                {/* Icon on right */}
                 {iconReverse && icon}
             </label>
             {!hideError && message && (

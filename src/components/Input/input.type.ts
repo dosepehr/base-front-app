@@ -18,4 +18,5 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
         animatedText?: string;
         labelText?: string;
         hideError?: boolean;
+        isOutline?: boolean;
     };

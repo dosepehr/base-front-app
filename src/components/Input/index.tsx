@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import { InputProps } from './input.type';
-
 import classNames from 'classnames';
 import './style.css';
+
 import { Size, Theme } from '@/utils/types/components/component-base.type';
+import { InputProps } from './input.type';
+
 const sizeClasses: Record<Size, string> = {
     xs: 'input-xs',
     sm: 'input-sm',
@@ -11,6 +12,7 @@ const sizeClasses: Record<Size, string> = {
     lg: 'input-lg',
     xl: 'input-xl',
 };
+
 const themeClasses: Record<Theme, string> = {
     accent: 'input-accent',
     error: 'input-error',
@@ -22,6 +24,7 @@ const themeClasses: Record<Theme, string> = {
     warning: 'input-warning',
     default: '',
 };
+
 const Input: FC<InputProps> = ({
     className,
     type = 'text',
@@ -32,8 +35,13 @@ const Input: FC<InputProps> = ({
     animatedText,
     iconReverse = false,
     labelText,
+    errors,
+    name,
+    hideError,
     ...rest
 }) => {
+    const message = name && errors?.[name]?.message;
+
     const classes = classNames(
         'input w-full',
         {
@@ -47,6 +55,7 @@ const Input: FC<InputProps> = ({
         },
         className,
     );
+
     return (
         <div className='fieldset'>
             {labelText && (
@@ -54,13 +63,13 @@ const Input: FC<InputProps> = ({
             )}
             <label className={classes}>
                 {isAnimated && <span>{animatedText ?? rest.placeholder}</span>}
-
-                {/* show icon at start */}
                 {!iconReverse && icon}
-                <input type={type} {...rest} />
-                {/* show icon at end */}
+                <input type={type} name={name} {...rest} />
                 {iconReverse && icon}
             </label>
+            {!hideError && message && (
+                <p className='text-error text-sm mt-1'>{String(message)}</p>
+            )}
         </div>
     );
 };

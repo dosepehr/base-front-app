@@ -80,7 +80,7 @@ export const AllVariants: Story = {
     },
 };
 
-export const WithIcon: Story = {
+export const WithCustomIcon: Story = {
     args: {
         children: 'This alert includes an icon!',
         theme: 'success',
@@ -91,7 +91,7 @@ export const WithIcon: Story = {
 
 export const WithActions: Story = {
     render: (args) => (
-        <Alert {...args} icon={<Search />} theme='info' variant='default'>
+        <Alert {...args} theme='info' variant='default'>
             <span className='flex-1'>We use cookies for no reason.</span>
             <div className='space-x-2'>
                 <Button size='sm' theme='error'>
@@ -105,4 +105,3 @@ export const WithActions: Story = {
     ),
     args: {},
 };
-

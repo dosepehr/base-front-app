@@ -8,5 +8,6 @@ export type TextareaProps = Omit<
     ComponentBase & {
         icon?: React.ReactNode;
         iconReverse?: boolean;
+        isOutline?: boolean;
+        labelText?: string;
     };
-

@@ -9,7 +9,9 @@ const Textarea: FC<TextareaProps> = ({
     size = 'md',
     icon,
     placeholder,
-    iconReverse = false,
+    iconReverse,
+    isOutline,
+    labelText,
     ...rest
 }) => {
     const sizeClasses: Record<Size, string> = {
@@ -39,27 +41,36 @@ const Textarea: FC<TextareaProps> = ({
             [`${sizeClasses[size]}`]: size,
         },
         {
-            'ps-8': icon && !iconReverse,
+            'ps-10': icon && !iconReverse,
             'pe-8': icon && iconReverse,
         },
-        className
+        {
+            'focus-within:outline-none': !isOutline,
+        },
+        className,
     );
 
     return (
-        <div className='relative'>
-            <textarea
-                placeholder={placeholder}
-                className={`${classes}`}
-                {...rest}
-            ></textarea>
-
-            {!iconReverse && (
-                <div className='absolute top-2 start-3'>{icon}</div>
+        <fieldset className='fieldset'>
+            {labelText && (
+                <legend className='fieldset-legend'>{labelText}</legend>
             )}
-            {iconReverse && <div className='absolute top-2 end-3'>{icon}</div>}
-        </div>
+            <div className='relative'>
+                <textarea
+                    placeholder={placeholder}
+                    className={classes}
+                    {...rest}
+                ></textarea>
+
+                {!iconReverse && (
+                    <div className='absolute top-2 start-3'>{icon}</div>
+                )}
+                {iconReverse && (
+                    <div className='absolute top-2 end-3'>{icon}</div>
+                )}
+            </div>
+        </fieldset>
     );
 };
 
 export default Textarea;
-

@@ -49,6 +49,15 @@ export const Default: Story = {
     },
 };
 
+export const Disabled: Story = {
+    args: {
+        options: baseOptions,
+        theme: 'primary',
+        size: 'md',
+        isDisabled: true,
+    },
+};
+
 export const AllThemes: Story = {
     render: (args) => (
         <div className='flex flex-col gap-2 w-60'>
@@ -81,7 +90,7 @@ export const AllSizes: Story = {
             {(['xs', 'sm', 'md', 'lg', 'xl'] as SelectProps['size'][]).map(
                 (size) => (
                     <Select key={size} {...args} size={size} />
-                )
+                ),
             )}
         </div>
     ),
@@ -91,3 +100,11 @@ export const AllSizes: Story = {
     },
 };
 
+export const WithLabel: Story = {
+    args: {
+        options: baseOptions,
+        theme: 'primary',
+        size: 'md',
+        labelText: 'Choose your favorite fruit',
+    },
+};

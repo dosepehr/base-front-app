@@ -4,7 +4,7 @@ const Table = ({ headData, children, classname }: TableType) => {
     return (
         <div className={`mx-auto w-full max-w-5xl ${classname}`}>
             <div className='overflow-x-auto rounded-t-3xl border border-[#B9B9B9] rounded-b-lg'>
-                <table className='table overflow-hidden rounded-t-3xl bg-white'>
+                <table className='table overflow-hidden rounded-t-3xl'>
                     <thead className='rounded-t-3xl bg-yellow-1'>
                         <tr>
                             {headData.map((data, i) => (

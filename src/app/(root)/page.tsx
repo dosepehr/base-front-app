@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import Table from '@/components/Table';
 import TCell from '@/components/Table/TCell';
 import Tr from '@/components/Table/Tr';

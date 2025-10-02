@@ -26,7 +26,7 @@ const themeClasses: Record<Theme, string> = {
 const sizeClasses: Record<Size, string> = {
     xs: 'btn-xs',
     sm: 'btn-sm',
-    md: '',
+    md: 'btn-md',
     lg: 'btn-lg',
     xl: 'btn-xl',
 };

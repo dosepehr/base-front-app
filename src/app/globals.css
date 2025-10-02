@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@plugin "daisyui" {
+  themes: ["light", "dark"];
+  exclude: rootscrollgutter;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   /* breakpoint */
   --breakpoint-xs: 30rem;
@@ -15,34 +22,72 @@
 }
 
 
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  color-scheme: "light";
 
-@plugin "daisyui" {
-  themes: light --default;
-  exclude: rootscrollgutter;
+  --root-bg: #FAF9F9;
+  --color-base-content: #231f20;
+
+  --color-primary: #33A3DC;
+  --color-primary-content: #faf9f9;
+
+  --color-secondary: #7D7A7A;
+  --color-secondary-content: oklch(98% 0.01 200);
+
+  --color-neutral: #C9AA94;
+  --color-neutral-content: #231f20;
+
+  --color-accent: #b8b8b8;
+  --color-accent-content: #f8f6f7;
+
+  --color-info: oklch(70% 0.2 220);
+  --color-info-content: oklch(98% 0.01 220);
+
+  --color-success: #4CAF50;
+  --color-success-content: #FAF9F9;
+
+  --color-warning: #FFC107;
+  --color-warning-content: #231F20;
+
+  --color-error: #ff5861;
+  --color-error-content: #FAF9F9;
 }
 
 @plugin "daisyui/theme" {
-  color-scheme: "light";
-  default: true;
-  --color-primary: #f5cf60;
-  --color-secondary: #ce4648;
-  --color-neutral: #f5cf60;
-  --color-base-content: #666666;
-  --root-bg: #2c373d;
-  --color-primary-content: #ffffff;
-  --color-secondary-content: oklch(98% 0.01 200);
-  --color-accent: #b8b8b8;
-  --color-accent-content: #f8f6f7;
-  --color-neutral-content: oklch(98% 0.01 240);
+  name: "dark";
+  color-scheme: "dark";
+
+  --root-bg: #1A1B1E;
+  --color-base-content: #E6E6E6;
+
+  --color-primary: #4FB8E8;
+  --color-primary-content: #0D1117;
+
+  --color-secondary: #A7A7A7;
+  --color-secondary-content: #0D1117;
+
+  --color-neutral: #8B6E59;
+  --color-neutral-content: #E6E6E6;
+
+  --color-accent: #6E6E6E;
+  --color-accent-content: #FAFAFA;
+
   --color-info: oklch(70% 0.2 220);
-  --color-info-content: oklch(98% 0.01 220);
-  --color-success: #00a96e;
-  --color-success-content: oklch(98% 0.01 140);
-  --color-warning: #ffbe00;
-  --color-warning-content: oklch(20% 0.05 80);
-  --color-error: #ff5861;
-  --color-error-content: oklch(98% 0.01 30);
+  --color-info-content: #0D1117;
+
+  --color-success: #3FAF48;
+  --color-success-content: #FAFAFA;
+
+  --color-warning: #E0A72E;
+  --color-warning-content: #0D1117;
+
+  --color-error: #FF6B72;
+  --color-error-content: #FAFAFA;
 }
+
+
 
 html {
   font-family: var(--font-estedad);
@@ -83,4 +128,11 @@ img {
 ::selection {
   color: var(--color-neutral-content);
   background: var(--color-neutral)
+}
+:root {
+  transition:
+    background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }

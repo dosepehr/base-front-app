@@ -1,4 +1,4 @@
-import React from 'react';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/nextjs-vite';
 import '../src/app/globals.css';
 import { Lato } from 'next/font/google';
@@ -9,15 +9,6 @@ const lato = Lato({
     display: 'swap',
     variable: '--font-lato',
 });
-
-export const decorators = [
-    (Story) => {
-        if (typeof document !== 'undefined') {
-            document.body.classList.add(lato.variable);
-        }
-        return <Story />;
-    },
-];
 
 const preview: Preview = {
     parameters: {
@@ -31,7 +22,33 @@ const preview: Preview = {
             test: 'todo',
         },
     },
+
+    globalTypes: {
+        theme: {
+            name: 'Theme',
+            description: 'Global theme for components',
+            defaultValue: 'light',
+            toolbar: {
+                icon: 'circlehollow',
+                items: [
+                    { value: 'light', title: 'Light' },
+                    { value: 'dark', title: 'Dark' },
+                ],
+                showName: true,
+            },
+        },
+    },
+
+    decorators: [
+        withThemeByDataAttribute({
+            defaultTheme: 'light',
+            themes: {
+                light: 'light',
+                dark: 'dark',
+            },
+            attributeName: 'data-theme',
+        }),
+    ],
 };
 
 export default preview;
-

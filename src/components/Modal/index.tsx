@@ -2,9 +2,9 @@
 
 import React, { FC } from 'react';
 import { ModalProps } from './modal.type';
-import Close from '@/../public/icons/close.svg';
 import Button from '../Button';
 import { closeModal } from '@/utils/funcs/modal';
+import { CircleX } from 'lucide-react';
 const Modal: FC<ModalProps> = ({ title, children, id }) => {
     return (
         <div>
@@ -17,7 +17,7 @@ const Modal: FC<ModalProps> = ({ title, children, id }) => {
                             onClick={() => closeModal(id)}
                         >
                             <Button size='sm' className='px-0 border-0'>
-                                <Close width={32} height={32} />
+                                <CircleX width={32} height={32} />
                             </Button>
                         </form>
                     </div>

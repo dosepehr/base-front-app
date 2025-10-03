@@ -36,6 +36,9 @@ const Rating: FC<RatingType> = ({
         {
             [`${themeClasses[theme]}`]: theme,
         },
+        {
+            '!cursor-default':isDisabled
+        },
         starClassname,
     );
     const starsContainerClasses = classNames(

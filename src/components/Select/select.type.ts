@@ -6,14 +6,15 @@ export type SelectProps = Omit<
     'size'
 > &
     ComponentBase & {
-        options: OptionsType;
+        options: OptionsType[];
         labelText?: string;
+        state?: 'loading' | 'error' | 'success';
+        loadingMessage?: string;
+        errorMessage?: string;
+        placeholder: string;
     };
 
 export type OptionsType = {
     title: string;
-    options: {
-        title: string;
-        value: string | number;
-    }[];
+    value: string | number;
 };

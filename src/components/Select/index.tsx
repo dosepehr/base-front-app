@@ -21,6 +21,7 @@ const themeClasses: Record<Theme, string> = {
     warning: 'select-warning',
     default: '',
 };
+
 const Select: FC<SelectProps> = ({
     options,
     className,
@@ -28,10 +29,14 @@ const Select: FC<SelectProps> = ({
     size = 'md',
     labelText,
     isDisabled,
+    state,
+    loadingMessage = 'Loading...',
+    errorMessage = 'Something went wrong!',
+    placeholder,
     ...rest
 }) => {
     const classes = classNames(
-        'select',
+        'select w-full',
         {
             [`${themeClasses[theme]}`]: theme,
         },
@@ -40,26 +45,39 @@ const Select: FC<SelectProps> = ({
         },
         className,
     );
+
+    const stateHandler = () => {
+        if (state === 'error') return errorMessage;
+        if (state === 'loading') return loadingMessage;
+        return placeholder;
+    };
+
     return (
-        <fieldset className='fieldset'>
+        <fieldset
+            className='fieldset'
+        >
             {labelText && (
                 <legend className='fieldset-legend'>{labelText}</legend>
             )}
+
             <select
                 defaultValue=''
                 className={classes}
+                disabled={
+                    isDisabled || state === 'loading' || state === 'error'
+                }
                 {...rest}
-                disabled={isDisabled}
             >
                 <option value='' disabled>
-                    {options.title}
+                    {stateHandler()}
                 </option>
 
-                {options.options.map((opt, i) => (
-                    <option key={i} value={opt.value}>
-                        {opt.title}
-                    </option>
-                ))}
+                {!['error', 'loading'].includes(state ?? '') &&
+                    options.map((opt, i) => (
+                        <option key={i} value={opt.value}>
+                            {opt.title}
+                        </option>
+                    ))}
             </select>
         </fieldset>
     );

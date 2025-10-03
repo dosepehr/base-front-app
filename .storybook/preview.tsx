@@ -23,22 +23,6 @@ const preview: Preview = {
         },
     },
 
-    globalTypes: {
-        theme: {
-            name: 'Theme',
-            description: 'Global theme for components',
-            defaultValue: 'light',
-            toolbar: {
-                icon: 'circlehollow',
-                items: [
-                    { value: 'light', title: 'Light' },
-                    { value: 'dark', title: 'Dark' },
-                ],
-                showName: true,
-            },
-        },
-    },
-
     decorators: [
         withThemeByDataAttribute({
             defaultTheme: 'light',

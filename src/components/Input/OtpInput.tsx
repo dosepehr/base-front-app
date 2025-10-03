@@ -108,7 +108,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
                         maxLength={1}
                         size={size}
                         theme={theme}
-                        className={`!w-10 ${className}`}
+                        className={`!w-10 !p-0 [&>input]:text-center ${className}`}
                         value={digit}
                         onChange={(e) =>
                             handleChange(

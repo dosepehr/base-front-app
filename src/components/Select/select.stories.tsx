@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Select from './index';
-import { SelectProps } from './select.type';
+import { OptionsType, SelectProps } from './select.type';
 
 const meta: Meta<typeof Select> = {
     title: 'components/Select',
@@ -32,20 +32,18 @@ export default meta;
 
 type Story = StoryObj<typeof Select>;
 
-const baseOptions: SelectProps['options'] = {
-    title: 'Select a fruit',
-    options: [
-        { title: 'Apple', value: 'apple' },
-        { title: 'Banana', value: 'banana' },
-        { title: 'Cherry', value: 'cherry' },
-    ],
-};
+const baseOptions: OptionsType[] = [
+    { title: 'Apple', value: 'apple' },
+    { title: 'Banana', value: 'banana' },
+    { title: 'Cherry', value: 'cherry' },
+];
 
 export const Default: Story = {
     args: {
         options: baseOptions,
         theme: 'primary',
         size: 'md',
+        placeholder: 'Select a fruit...',
     },
 };
 
@@ -54,7 +52,30 @@ export const Disabled: Story = {
         options: baseOptions,
         theme: 'primary',
         size: 'md',
+        placeholder: 'Select a fruit...',
         isDisabled: true,
+    },
+};
+
+export const LoadingState: Story = {
+    args: {
+        options: baseOptions,
+        theme: 'primary',
+        size: 'md',
+        state: 'loading',
+        loadingMessage: 'Loading fruits...',
+        placeholder: 'Select a fruit...',
+    },
+};
+
+export const ErrorState: Story = {
+    args: {
+        options: baseOptions,
+        theme: 'primary',
+        size: 'md',
+        state: 'error',
+        errorMessage: 'Failed to load fruits!',
+        placeholder: 'Select a fruit...',
     },
 };
 
@@ -81,6 +102,7 @@ export const AllThemes: Story = {
     args: {
         options: baseOptions,
         size: 'md',
+        placeholder: 'Select a fruit...',
     },
 };
 
@@ -97,6 +119,7 @@ export const AllSizes: Story = {
     args: {
         options: baseOptions,
         theme: 'info',
+        placeholder: 'Select a fruit...',
     },
 };
 
@@ -106,5 +129,6 @@ export const WithLabel: Story = {
         theme: 'primary',
         size: 'md',
         labelText: 'Choose your favorite fruit',
+        placeholder: 'Select a fruit...',
     },
 };

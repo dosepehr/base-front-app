@@ -27,8 +27,11 @@
   default: true;
   color-scheme: "light";
 
-  --root-bg: #FAF9F9;
   --color-base-content: #231f20;
+  --color-base-100: #FAF9F9;
+  --color-base-200: oklch(98% 0 0);
+  --color-base-300: oklch(95% 0 0);
+
 
   --color-primary: #33A3DC;
   --color-primary-content: #faf9f9;
@@ -59,8 +62,10 @@
   name: "dark";
   color-scheme: "dark";
 
-  --root-bg: #1A1B1E;
   --color-base-content: #E6E6E6;
+  --color-base-100: #1A1B1E;
+  --color-base-200: oklch(23.26% .014 253.1);
+  --color-base-300: oklch(21.15% .012 254.09);
 
   --color-primary: #4FB8E8;
   --color-primary-content: #0D1117;
@@ -91,7 +96,6 @@
 
 html {
   font-family: var(--font-estedad);
-  background-color: var(--root-bg);
   scroll-behavior: smooth;
 }
 
@@ -129,6 +133,7 @@ img {
   color: var(--color-neutral-content);
   background: var(--color-neutral)
 }
+
 :root {
   transition:
     background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),

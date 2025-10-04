@@ -28,25 +28,38 @@ const Toggle: FC<ToggleProps> = ({
     size = 'md',
     theme = 'primary',
     classname,
+    iconOn,
+    iconOff,
     ...rest
 }) => {
     const classes = classNames(
-        'toggle',
         {
-            [`${sizeClasses[size]}`]: size,
+            toggle: !iconOn && !iconOff,
         },
-        {
-            [`${themeClasses[theme]}`]: theme,
-        },
+        size && sizeClasses[size],
+        theme && themeClasses[theme],
         classname,
     );
+
     return (
         <fieldset className='fieldset w-fit'>
             <legend className='fieldset-legend'>{fieldsetText}</legend>
             <label className='label'>
-                <input type='checkbox' className={classes} {...rest} />
-
-                {labelText}
+                {iconOn && iconOff ? (
+                    <div className='flex items-center gap-x-2 justify-between'>
+                        <label className='toggle'>
+                            <input type='checkbox' className={classes} />
+                            {iconOff}
+                            {iconOn}
+                        </label>
+                        {labelText && <p className='lael'>{labelText}</p>}
+                    </div>
+                ) : (
+                    <>
+                        <input type='checkbox' className={classes} {...rest} />
+                        {labelText}
+                    </>
+                )}
             </label>
         </fieldset>
     );

@@ -14,7 +14,9 @@
         "test:storybook": "vitest --config vitest.storybook.config.ts",
         "test:ui": "vitest --ui",
         "coverage": "vitest run --coverage",
-        "upgrade": "npm-check-updates -u"
+        "upgrade": "npm-check-updates -u",
+        "clean-icons": "rimraf src/components/Icons",
+        "generate-icons": "npm run clean-icons && svgr --icon --typescript --filename-case kebab --svg-props width=24,height=24 --replace-attr-values \"#000=currentColor,#fff=currentColor\" --out-dir src/components/Icons public/icons"
     },
     "dependencies": {
         "@hookform/resolvers": "^5.2.2",
@@ -47,6 +49,7 @@
         "@storybook/addon-themes": "^9.1.10",
         "@storybook/addon-vitest": "^9.1.10",
         "@storybook/nextjs-vite": "^9.1.10",
+        "@svgr/cli": "^8.1.0",
         "@tailwindcss/postcss": "^4",
         "@tanstack/react-query-devtools": "^5.90.2",
         "@types/next-pwa": "^5.6.9",
@@ -64,6 +67,7 @@
         "orval": "^7.13.0",
         "playwright": "^1.55.1",
         "prettier": "^3.6.2",
+        "rimraf": "^6.0.1",
         "storybook": "^9.1.10",
         "tailwindcss": "^4",
         "typescript": "^5",

@@ -8,7 +8,7 @@ import {
 } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { toast } from 'sonner';
-import { Problem } from '../types/DTO/http-errors-interface';
+import { Problem } from '../types/DTO/http-errors.interface';
 
 const queryClient = new QueryClient({
     queryCache: new QueryCache({
@@ -48,4 +48,3 @@ const ReactQueryProvider: FC<PropsWithChildren> = ({ children }) => {
 };
 
 export default ReactQueryProvider;
-

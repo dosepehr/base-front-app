@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { baseURL } from '../constants/global';
-import { ApiError } from '../types/DTO/http-errors-interface';
+import { ApiError } from '../types/DTO/http-errors.interface';
 import { errorHandler, networkErrorStrategy } from './http-error-strategies';
 import Cookies from 'universal-cookie';
 

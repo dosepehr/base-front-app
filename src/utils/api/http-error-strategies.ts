@@ -6,7 +6,7 @@ import {
     UnauthorizedError,
     UnhandledException,
     ValidationError,
-} from '@/utils/types/DTO/http-errors-interface';
+} from '@/utils/types/DTO/http-errors.interface';
 
 export type ApiErrorHandler = (errorData: ApiError) => void;
 
@@ -46,7 +46,7 @@ export const networkErrorStrategy = () => {
 export const errorHandler: Record<number, ApiErrorHandler> = {
     400: (errorData) =>
         (errorData.errors ? validationErrorStrategy : badRequestErrorStrategy)(
-            errorData
+            errorData,
         ),
     409: conflictError,
     403: unauthorizedErrorStrategy,
@@ -55,4 +55,3 @@ export const errorHandler: Record<number, ApiErrorHandler> = {
     422: badRequestErrorStrategy,
     500: unhandledExceptionStrategy,
 };
-

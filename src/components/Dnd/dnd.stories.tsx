@@ -40,7 +40,7 @@ export default meta;
 type Story = StoryObj<typeof Dnd>;
 
 const defaultChildren = (
-    <div className='text-white text-sm p-4'>
+    <div className='text-white bg-primary border-secondary border-dashed rounded-xl text-sm p-4'>
         <strong>Click or drop PDF file here</strong>
     </div>
 );
@@ -54,14 +54,13 @@ export const SingleFileUpload: Story = {
         allowMultiple: false,
         enableDelete: true,
         enableDownload: true,
-        onChange: (file) => console.log('Selected file:', file),
     },
 };
 
 export const MultipleFileUpload: Story = {
     args: {
         children: (
-            <div className='text-white text-sm p-4'>
+            <div className='text-white bg-primary border-secondary border-dashed rounded-xl text-sm p-4'>
                 <strong>Upload multiple PDF files</strong>
             </div>
         ),
@@ -71,14 +70,13 @@ export const MultipleFileUpload: Story = {
         allowMultiple: true,
         enableDelete: true,
         enableDownload: true,
-        onChange: (files) => console.log('Files:', files),
     },
 };
 
 export const NoDetails: Story = {
     args: {
         children: (
-            <div className='text-white p-4 text-center'>
+            <div className='text-white bg-primary border-secondary border-dashed rounded-xl p-4 text-center'>
                 <strong>Upload file (no details shown)</strong>
             </div>
         ),
@@ -94,14 +92,14 @@ export const NoDetails: Story = {
 export const CustomStyles: Story = {
     args: {
         children: (
-            <div className='text-white text-center text-base py-6 px-2'>
+            <div className='text-white bg-primary border-secondary border-dashed rounded-xl text-center text-base py-6 px-2'>
                 <strong>Stylish DND Area</strong>
             </div>
         ),
         showDetails: true,
         theme: 'secondary',
         classname:
-            'rounded-xl border-4 border-dashed border-white min-h-[150px]',
+            'rounded-xl border border-dashed border-secondary',
         fileItemStyle: 'shadow-md border border-gray-200',
         maxFiles: 3,
         allowMultiple: true,
@@ -113,7 +111,7 @@ export const CustomStyles: Story = {
 export const DisabledDownloadDelete: Story = {
     args: {
         children: (
-            <div className='text-white text-center py-4'>
+            <div className='text-white bg-primary border-secondary border-dashed rounded-xl text-center py-4'>
                 Drop a file – no delete/download allowed
             </div>
         ),

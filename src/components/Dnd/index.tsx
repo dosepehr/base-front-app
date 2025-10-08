@@ -1,10 +1,9 @@
-'use client';
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Theme } from '@/utils/types/components/component-base.type';
 import classNames from 'classnames';
-import { DndProps } from './dnd';
 import Button from '../Button';
+import { Trash, Download } from 'lucide-react';
+import { DndProps } from './dnd.type';
 
 const Dnd: React.FC<DndProps> = ({
     onChange = () => {},
@@ -12,15 +11,16 @@ const Dnd: React.FC<DndProps> = ({
     children,
     classname,
     fileItemStyle,
-    theme = 'primary',
-    accept = { 'application/pdf': ['.pdf'] },
+    accept = { 'image/*': ['.jpg', '.jpeg', '.png'] },
     maxFiles = 1,
     allowMultiple = false,
     enableDownload = true,
     enableDelete = true,
     ...rest
 }) => {
-    const [files, setFiles] = useState<Array<File & { index: number }>>([]);
+    const [files, setFiles] = useState<
+        Array<File & { preview: string; index: number }>
+    >([]);
 
     const { getRootProps, getInputProps } = useDropzone({
         accept,
@@ -28,7 +28,10 @@ const Dnd: React.FC<DndProps> = ({
         maxFiles,
         onDrop: (acceptedFiles) => {
             const newFiles = acceptedFiles.map((file, index) =>
-                Object.assign(file, { index }),
+                Object.assign(file, {
+                    index,
+                    preview: URL.createObjectURL(file),
+                }),
             );
             setFiles(newFiles);
             onChange(allowMultiple ? acceptedFiles : acceptedFiles[0]);
@@ -36,15 +39,10 @@ const Dnd: React.FC<DndProps> = ({
         ...rest,
     });
 
-    const uploadedFiles = files.map((file, i) => ({
-        index: i,
-        name: file.name,
-        size: file.size / 1000,
-        file: file,
-    }));
-
     const deleteFile = (id: number) => {
         const updatedFiles = files.filter((_, i) => i !== id);
+        // revoke old URLs
+        URL.revokeObjectURL(files[id].preview);
         setFiles(updatedFiles);
         onChange(allowMultiple ? updatedFiles.map((f) => f as File) : null);
     };
@@ -63,66 +61,57 @@ const Dnd: React.FC<DndProps> = ({
         }
     };
 
-    const themeClasses: Record<Theme, string> = {
-        accent: 'bg-accent',
-        error: 'bg-error',
-        info: 'bg-info',
-        neutral: 'bg-neutral',
-        primary: 'bg-primary',
-        secondary: 'bg-secondary',
-        success: 'bg-success',
-        warning: 'bg-warning',
-        default: '',
-    };
-
-    const dndClasses = classNames(themeClasses[theme], classname);
+    const dndClasses = classNames(classname);
     const detailsClasses = classNames(
         'bg-white py-3 px-4 rounded flex items-center justify-between',
         fileItemStyle,
     );
+
     return (
-        <section className='cursor-pointer'>
+        <section className='cursor-pointer relative'>
             <div {...getRootProps()} className={dndClasses}>
                 <input {...getInputProps()} />
                 {children}
             </div>
 
-            {showDetails && uploadedFiles.length > 0 && (
-                <aside className='mt-5 space-y-2'>
-                    {uploadedFiles.map((file) => (
-                        <div
-                            key={file.name}
-                            className={detailsClasses}
-                            dir='ltr'
-                        >
-                            <div className='flex flex-col'>
-                                <p className='text-primary font-bold'>
-                                    {file.name}
-                                </p>
-                                <p className='text-gray-500 text-xs font-semibold'>
-                                    {file.size.toFixed(2)} KB
-                                </p>
-                            </div>
-
-                            <div className='flex gap-3'>
-                                {enableDelete && (
-                                    <Button
-                                        onClick={() => deleteFile(file.index)}
-                                        theme='error'
-                                        variant='soft'
-                                    >
-                                        Delete
-                                    </Button>
-                                )}
-                                {enableDownload && (
-                                    <Button
-                                        onClick={() => downloadFile(file.index)}
-                                        theme='info'
-                                        variant='soft'
-                                    >
-                                        Download
-                                    </Button>
-                                )}
+            {showDetails && files.length > 0 && (
+                <aside className='mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
+                    {files.map((file) => (
+                        <div key={file.name} className={detailsClasses}>
+                            <div className='flex flex-col items-center w-full'>
+                                <img
+                                    src={file.preview}
+                                    alt={file.name}
+                                    className='rounded-xl w-full h-40 object-cover mb-2'
+                                />
+                                <div className='flex gap-3'>
+                                    {enableDelete && (
+                                        <Button
+                                            onClick={() =>
+                                                deleteFile(file.index)
+                                            }
+                                            theme='error'
+                                            variant='soft'
+                                            size='sm'
+                                        >
+                                            <Trash size={14} />
+                                            Delete
+                                        </Button>
+                                    )}
+                                    {enableDownload && (
+                                        <Button
+                                            onClick={() =>
+                                                downloadFile(file.index)
+                                            }
+                                            theme='info'
+                                            variant='soft'
+                                            size='sm'
+                                        >
+                                            <Download size={14} />
+                                            Download
+                                        </Button>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     ))}

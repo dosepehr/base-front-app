@@ -1,5 +1,5 @@
 import { ComponentBase } from '@/utils/types/components/component-base.type';
-import { DropzoneOptions } from 'react-dropzone';
+import type { DropzoneOptions } from 'react-dropzone';
 
 export type DndProps = Omit<ComponentBase, 'size' | 'isDisabled'> &
     DropzoneOptions & {

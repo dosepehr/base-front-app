@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgAperture = (props: SVGProps<SVGSVGElement>) => (
+const SvgEye = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -10,12 +10,12 @@ const SvgAperture = (props: SVGProps<SVGSVGElement>) => (
         strokeLinecap='round'
         strokeLinejoin='round'
         strokeWidth={2}
-        className='aperture_svg__lucide aperture_svg__lucide-aperture-icon aperture_svg__lucide-aperture'
+        className='eye_svg__lucide eye_svg__lucide-eye-icon eye_svg__lucide-eye'
         viewBox='0 0 24 24'
         {...props}
     >
-        <circle cx={12} cy={12} r={10} />
-        <path d='m14.31 8 5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16 3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94' />
+        <path d='M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0' />
+        <circle cx={12} cy={12} r={3} />
     </svg>
 );
-export default SvgAperture;
+export default SvgEye;

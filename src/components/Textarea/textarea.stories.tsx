@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Textarea from '.';
 import { Theme, Size } from '@/utils/types/components/component-base.type';
-import { Search } from 'lucide-react';
+import { Search } from '@/components/_icons';
 
 const meta: Meta<typeof Textarea> = {
     title: 'components/Textarea',

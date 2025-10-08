@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 import { ModalProps } from './modal.type';
 import Button from '../Button';
 import { closeModal } from '@/utils/funcs/modal';
-import { CircleX } from 'lucide-react';
+import { CircleX } from '@/components/_icons';
 const Modal: FC<ModalProps> = ({ title, children, id }) => {
     return (
         <div>
@@ -32,4 +32,3 @@ const Modal: FC<ModalProps> = ({ title, children, id }) => {
 };
 
 export default Modal;
-

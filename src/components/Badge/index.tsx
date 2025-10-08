@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { BadgeProps, BadgeVariant } from './badge.type';
 import classNames from 'classnames';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
-import { Info, CheckCircle, AlertTriangle, XCircle } from 'lucide-react';
+import { CircleCheck, CircleX, Info, TriangleAlert } from '@/components/_icons';
 
 const variantClasses: Record<BadgeVariant, string> = {
     dash: 'badge-dash',
@@ -28,13 +28,13 @@ const sizeClasses: Record<Size, string> = {
     lg: 'badge-lg',
     xl: 'badge-xl',
 };
-const iconProps = { size: 16 };
+const iconProps = { width: 16, height: 16 };
 
 const variantDefaultIcons: Partial<Record<Theme, React.ReactNode>> = {
-    error: <XCircle {...iconProps} />,
+    error: <CircleX {...iconProps} />,
     info: <Info {...iconProps} />,
-    success: <CheckCircle {...iconProps} />,
-    warning: <AlertTriangle {...iconProps} />,
+    success: <CircleCheck {...iconProps} />,
+    warning: <TriangleAlert {...iconProps} />,
 };
 
 const Badge: FC<BadgeProps> = ({

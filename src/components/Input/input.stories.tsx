@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Input from '.';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
-import { Search } from 'lucide-react';
+
 import PasswordInput from './PasswordInput';
 import OtpInput from './OtpInput';
 import { useState } from 'react';
 import { FieldError } from 'react-hook-form';
+import { Search } from '@/components/_icons';
 
 const themes: Theme[] = [
     'primary',

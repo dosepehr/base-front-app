@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Alert from './index';
 import { AlertProps } from './alert.type';
-import { Search } from 'lucide-react';
-import Button from '../Button';
 
+import Button from '../Button';
+import { Search } from '@/components/_icons';
 const meta: Meta<typeof Alert> = {
     title: 'components/Alert',
     component: Alert,

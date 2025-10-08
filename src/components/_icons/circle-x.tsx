@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgAnnoyed = (props: SVGProps<SVGSVGElement>) => (
+const SvgCircleX = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -10,12 +10,12 @@ const SvgAnnoyed = (props: SVGProps<SVGSVGElement>) => (
         strokeLinecap='round'
         strokeLinejoin='round'
         strokeWidth={2}
-        className='annoyed_svg__lucide annoyed_svg__lucide-annoyed-icon annoyed_svg__lucide-annoyed'
+        className='circle-x_svg__lucide circle-x_svg__lucide-circle-x-icon circle-x_svg__lucide-circle-x'
         viewBox='0 0 24 24'
         {...props}
     >
         <circle cx={12} cy={12} r={10} />
-        <path d='M8 15h8M8 9h2M14 9h2' />
+        <path d='m15 9-6 6M9 9l6 6' />
     </svg>
 );
-export default SvgAnnoyed;
+export default SvgCircleX;

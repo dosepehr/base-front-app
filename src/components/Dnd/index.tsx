@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import classNames from 'classnames';
 import Button from '../Button';
-import { Trash, Download } from 'lucide-react';
 import { DndProps } from './dnd.type';
+import { Download, Trash } from '@/components/_icons';
 
 const Dnd: React.FC<DndProps> = ({
     onChange = () => {},
@@ -94,7 +94,7 @@ const Dnd: React.FC<DndProps> = ({
                                             variant='soft'
                                             size='sm'
                                         >
-                                            <Trash size={14} />
+                                            <Trash width={14} height={14} />
                                             Delete
                                         </Button>
                                     )}
@@ -107,7 +107,7 @@ const Dnd: React.FC<DndProps> = ({
                                             variant='soft'
                                             size='sm'
                                         >
-                                            <Download size={14} />
+                                            <Download width={14} height={14} />
                                             Download
                                         </Button>
                                     )}

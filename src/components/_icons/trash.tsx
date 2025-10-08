@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgAtSign = (props: SVGProps<SVGSVGElement>) => (
+const SvgTrash = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -10,12 +10,11 @@ const SvgAtSign = (props: SVGProps<SVGSVGElement>) => (
         strokeLinecap='round'
         strokeLinejoin='round'
         strokeWidth={2}
-        className='at-sign_svg__lucide at-sign_svg__lucide-at-sign-icon at-sign_svg__lucide-at-sign'
+        className='trash_svg__lucide trash_svg__lucide-trash-icon trash_svg__lucide-trash'
         viewBox='0 0 24 24'
         {...props}
     >
-        <circle cx={12} cy={12} r={4} />
-        <path d='M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8' />
+        <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2' />
     </svg>
 );
-export default SvgAtSign;
+export default SvgTrash;

@@ -1,8 +1,8 @@
 'use client';
 import React, { FC, useState } from 'react';
 import Input from '.';
-import { Eye, EyeClosed } from 'lucide-react';
 import { InputProps } from './input.type';
+import { Eye, EyeClosed } from '@/components/_icons';
 
 const PasswordInput: FC<InputProps> = ({ ...args }) => {
     const [showPassword, setShowPassword] = useState(false);

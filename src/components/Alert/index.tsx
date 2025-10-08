@@ -2,12 +2,12 @@ import React, { FC } from 'react';
 import { AlertProps, AlertThemes, AlertVariants } from './alert.type';
 import classNames from 'classnames';
 import {
-    Info,
-    CheckCircle,
-    AlertTriangle,
-    XCircle,
+    CircleCheck,
     CircleQuestionMark,
-} from 'lucide-react';
+    CircleX,
+    Info,
+    TriangleAlert,
+} from '@/components/_icons';
 
 const Alert: FC<AlertProps> = ({
     children,
@@ -30,14 +30,14 @@ const Alert: FC<AlertProps> = ({
         outline: 'alert-outline',
         soft: 'alert-soft',
     };
-    const iconProps = { size: 20 };
+    const iconProps = { width: 20, height: 20 };
 
     const variantDefaultIcons: Record<AlertThemes, React.ReactNode> = {
         default: <CircleQuestionMark {...iconProps} />,
-        error: <XCircle {...iconProps} />,
+        error: <CircleX {...iconProps} />,
         info: <Info {...iconProps} />,
-        success: <CheckCircle {...iconProps} />,
-        warning: <AlertTriangle {...iconProps} />,
+        success: <CircleCheck {...iconProps} />,
+        warning: <TriangleAlert {...iconProps} />,
     };
     const classes = classNames(
         'alert',

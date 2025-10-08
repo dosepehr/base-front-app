@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgAntenna = (props: SVGProps<SVGSVGElement>) => (
+const SvgSearch = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -10,11 +10,12 @@ const SvgAntenna = (props: SVGProps<SVGSVGElement>) => (
         strokeLinecap='round'
         strokeLinejoin='round'
         strokeWidth={2}
-        className='antenna_svg__lucide antenna_svg__lucide-antenna-icon antenna_svg__lucide-antenna'
+        className='search_svg__lucide search_svg__lucide-search-icon search_svg__lucide-search'
         viewBox='0 0 24 24'
         {...props}
     >
-        <path d='M2 12 7 2M7 12l5-10M12 12l5-10M17 12l5-10M4.5 7h15M12 16v6' />
+        <path d='m21 21-4.34-4.34' />
+        <circle cx={11} cy={11} r={8} />
     </svg>
 );
-export default SvgAntenna;
+export default SvgSearch;

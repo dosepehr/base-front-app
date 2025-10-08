@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Loading from '../Loading';
 import { ButtonProps, ButtonShape, ButtonVariant } from './button.types';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
-import { CircleArrowRight } from 'lucide-react';
+import { CircleArrowRight } from '@/components/_icons';
 
 const variantClasses: Record<ButtonVariant, string> = {
     default: '',
@@ -78,7 +78,11 @@ const Button: FC<ButtonProps> = ({
                 <>
                     {children}
                     {isAnimated && (
-                        <CircleArrowRight className='group-hover:translate-x-1 transition-transform' size={16} />
+                        <CircleArrowRight
+                            className='group-hover:translate-x-1 transition-transform'
+                            width={16}
+                            height={16}
+                        />
                     )}
                 </>
             )}

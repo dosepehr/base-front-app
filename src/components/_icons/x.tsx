@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgAsterisk = (props: SVGProps<SVGSVGElement>) => (
+const SvgX = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -10,11 +10,11 @@ const SvgAsterisk = (props: SVGProps<SVGSVGElement>) => (
         strokeLinecap='round'
         strokeLinejoin='round'
         strokeWidth={2}
-        className='asterisk_svg__lucide asterisk_svg__lucide-asterisk-icon asterisk_svg__lucide-asterisk'
+        className='x_svg__lucide x_svg__lucide-x-icon x_svg__lucide-x'
         viewBox='0 0 24 24'
         {...props}
     >
-        <path d='M12 6v12M17.196 9 6.804 15M6.804 9l10.392 6' />
+        <path d='M18 6 6 18M6 6l12 12' />
     </svg>
 );
-export default SvgAsterisk;
+export default SvgX;

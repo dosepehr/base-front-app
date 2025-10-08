@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import * as Icons from '../components/_icons';
+import * as Icons from 'icons';
 
 const meta: Meta = {
     title: 'Ui/Icon Pack',
@@ -22,23 +22,24 @@ const meta: Meta = {
         },
     },
     args: {
-        color: '#374151', // default gray-700
+        color: '#374151',
         width: 40,
         height: 40,
         className: '',
     },
 };
+
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const AllIcons: Story = {
+export const IconPack: Story = {
     render: (args) => (
-        <div className='grid grid-cols-4 gap-6 p-6'>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 p-6'>
             {Object.entries(Icons).map(([name, Icon]) => (
                 <div
                     key={name}
-                    className='flex flex-col items-center justify-center space-y-2'
+                    className='flex flex-col items-center justify-center space-y-2 p-4 rounded-lg bg-white shadow'
                 >
                     <Icon
                         style={{ color: args.color }}
@@ -46,7 +47,9 @@ export const AllIcons: Story = {
                         height={args.height}
                         className={args.className}
                     />
-                    <span className='text-sm text-gray-600'>{name}</span>
+                    <span className='text-sm text-gray-600 truncate'>
+                        {name}
+                    </span>
                 </div>
             ))}
         </div>

@@ -16,7 +16,7 @@
         "coverage": "vitest run --coverage",
         "upgrade": "npm-check-updates -u",
         "clean-icons": "rimraf src/components/Icons",
-        "generate-icons": "npm run clean-icons && svgr --icon --typescript --filename-case kebab --svg-props width=24,height=24 --replace-attr-values \"#000=currentColor,#fff=currentColor\" --out-dir src/components/Icons public/icons"
+        "generate-icons": "npm run clean-icons && svgr --icon --typescript --filename-case kebab --svg-props width=24,height=24 --replace-attr-values \"#000=currentColor,#fff=currentColor\" --out-dir src/components/_icons public/icons"
     },
     "dependencies": {
         "@hookform/resolvers": "^5.2.2",

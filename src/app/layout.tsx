@@ -162,8 +162,8 @@ export default function MainLayout({
                 <ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'>
                     <ReactQueryProvider>
                         <NextTopLoader
-                            color='#ce4648'
-                            shadow='0 0 10px #ce4648,0 0 5px #ce4648'
+                            color='#4FB8E8'
+                            shadow='0 0 10px #4FB8E8,0 0 5px #4FB8E8'
                             showSpinner={false}
                         />
                         <NuqsAdapter>

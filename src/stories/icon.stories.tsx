@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import * as Icons from 'icons';
-
 const meta: Meta = {
     title: 'Ui/Icon Pack',
     argTypes: {

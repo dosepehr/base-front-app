@@ -3,6 +3,7 @@ import type { Preview } from '@storybook/nextjs-vite';
 
 const preview: Preview = {
     parameters: {
+        backgrounds: { disable: false },
         controls: {
             matchers: {
                 color: /(background|color)$/i,

@@ -3,7 +3,7 @@ import { colors, daisyColors } from '../utils/theme/colors';
 import { getHexFromVar, getReadableTextColor } from '@/utils/funcs/color';
 
 const meta: Meta = {
-    title: 'ui/Colors',
+    title: 'tokens/Colors',
     parameters: {
         layout: 'padded',
     },

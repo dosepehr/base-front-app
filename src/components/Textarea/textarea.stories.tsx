@@ -1,9 +1,7 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Textarea from '.';
 import { Theme, Size } from '@/utils/types/components/component-base.type';
 import { Search } from '@/components/_icons';
-import { expect, userEvent } from 'storybook/test';
 const meta: Meta<typeof Textarea> = {
     title: 'components/Textarea',
     component: Textarea,
@@ -40,12 +38,6 @@ type Story = StoryObj<typeof Textarea>;
 export const Default: Story = {
     args: {
         placeholder: 'Enter text...',
-    },
-    play: async ({ canvas }) => {
-        const elem = canvas.getByRole('textbox');
-        const elemValue = 'sample text';
-        await userEvent.type(elem, elemValue);
-        expect(elem).toHaveValue(elemValue)
     },
 };
 

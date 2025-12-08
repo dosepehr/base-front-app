@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/nextjs-vite';
+import './static/tailwind.css';
 
 const preview: Preview = {
     // 🌐 Language switcher

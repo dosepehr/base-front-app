@@ -4,7 +4,6 @@ import Loading from '../Loading';
 import { ButtonProps, ButtonShape, ButtonVariant } from './button.types';
 import { Size, Theme } from '@/utils/types/components/component-base.type';
 import { CircleArrowRight } from '@/components/_icons';
-import './style.css'
 const variantClasses: Record<ButtonVariant, string> = {
     default: '',
     active: 'btn-active',

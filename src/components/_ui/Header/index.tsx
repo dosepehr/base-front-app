@@ -1,25 +1,31 @@
 'use client';
 import Button from '@/components/Button';
 import { useTheme } from '@/utils/theme/ThemeProvider';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Header = () => {
     const { theme, setTheme } = useTheme();
+    const [appliedTheme, setAppliedTheme] = useState<'light' | 'dark'>('light');
 
-    const appliedTheme =
-        theme === 'system'
-            ? window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light'
-            : theme;
+    useEffect(() => {
+        if (theme === 'system') {
+            const isDark = window.matchMedia(
+                '(prefers-color-scheme: dark)'
+            ).matches;
+            setAppliedTheme(isDark ? 'dark' : 'light');
+        } else {
+            setAppliedTheme(theme);
+        }
+    }, [theme]);
 
     const nextTheme = appliedTheme === 'dark' ? 'light' : 'dark';
+
     return (
-        <header className='bg-primary'>
+        <header className="bg-primary">
             <Button
                 onClick={() => setTheme(nextTheme)}
-                theme='secondary'
-                size='sm'
+                theme="secondary"
+                size="sm"
             >
                 change theme
             </Button>

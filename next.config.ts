@@ -1,16 +1,7 @@
-import { NextConfig } from 'next';
-const isDev = process.env.NODE_ENV === 'development';
+import type { NextConfig } from "next";
 
-const nextConfig:NextConfig = {
-    images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'example.com',
-            },
-        ],
-    },
-} 
+const nextConfig: NextConfig = {
+  /* config options here */
+};
 
-
-export default nextConfig
+export default nextConfig;

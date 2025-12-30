@@ -27,16 +27,18 @@ const Radial: FC<RadialProps> = ({
         {
             [`${themeClasses[theme]}`]: theme,
         },
-        classname
+        classname,
     );
     return (
         <div
             className={classes}
-            style={{
-                '--value': value,
-                '--size': size,
-                '--thickness': thickness,
-            }}
+            style={
+                {
+                    '--value': value,
+                    '--size': size,
+                    '--thickness': thickness,
+                } as React.CSSProperties
+            }
             aria-valuenow={value}
             role='progressbar'
         >
@@ -46,4 +48,3 @@ const Radial: FC<RadialProps> = ({
 };
 
 export default Radial;
-

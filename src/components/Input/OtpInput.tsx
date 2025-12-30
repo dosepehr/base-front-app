@@ -100,28 +100,16 @@ const OtpInput: React.FC<OtpInputProps> = ({
                 {value.map((digit, i) => (
                     <Input
                         key={i}
-                        ref={(el) =>
-                            (inputsRef.current[i] = el as HTMLInputElement)
-                        }
+                        ref={(el) => (inputsRef.current[i] = el)}
                         type='text'
                         inputMode='numeric'
                         maxLength={1}
                         size={size}
                         theme={theme}
-                        className={`!w-10 !p-0 [&>input]:text-center ${className}`}
+                        className={`w-10! p-0! [&>input]:text-center ${className}`}
                         value={digit}
-                        onChange={(e) =>
-                            handleChange(
-                                e as React.ChangeEvent<HTMLInputElement>,
-                                i,
-                            )
-                        }
-                        onKeyDown={(e) =>
-                            handleKeyDown(
-                                e as React.KeyboardEvent<HTMLInputElement>,
-                                i,
-                            )
-                        }
+                        onChange={(e) => handleChange(e, i)}
+                        onKeyDown={(e) => handleKeyDown(e, i)}
                         onPaste={handlePaste}
                     />
                 ))}

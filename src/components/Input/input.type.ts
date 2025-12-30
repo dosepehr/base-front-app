@@ -19,4 +19,5 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
         labelText?: string;
         hideError?: boolean;
         isOutline?: boolean;
+        ref?: (el: HTMLInputElement | null) => void;
     };

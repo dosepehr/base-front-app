@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="120"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="120"><svg width="240" height="120" viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"></stop>
+      <stop offset="50%" stop-color="#f59e0b"></stop>
+      <stop offset="100%" stop-color="#fbbf24"></stop>
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main text with glow effect -->
+  <text x="120" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="56" fill="url(#glow-gradient)" text-anchor="middle" filter="url(#glow)" font-weight="700" letter-spacing="-2">
+    sepehr
+  </text>
+  
+  <!-- Subtle underline -->
+  <line x1="40" y1="85" x2="200" y2="85" stroke="#f59e0b" stroke-width="2" opacity="0.5" stroke-linecap="round"></line>
+  
+  <!-- Tagline -->
+  <text x="120" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle" letter-spacing="1">
+    LOOK FOR THE LIGHT
+  </text>
+</svg></svg><style>@media (prefers-color-scheme: light) { :root { filter: contrast(1) brightness(1); } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

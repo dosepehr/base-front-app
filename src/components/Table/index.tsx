@@ -6,9 +6,9 @@ const Table = ({ headData, children, classname }: TableType) => {
             <div className='overflow-x-auto rounded-t-3xl border border-[#B9B9B9] rounded-b-lg'>
                 <table className='table overflow-hidden rounded-t-3xl'>
                     <thead className='rounded-t-3xl bg-yellow-1'>
-                        <tr>
+                        <tr >
                             {headData.map((data, i) => (
-                                <th className='bg-primary text-white' key={i}>
+                                <th className='bg-primary text-white text-center first:text-start last:text-end' key={i}>
                                     {data}
                                 </th>
                             ))}
